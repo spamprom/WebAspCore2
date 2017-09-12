@@ -31,9 +31,9 @@ export class DashboardComponent implements AfterViewInit {
     //    innerFFF();
     //    alert(this.testValrrr);
     //}
-    //ngAfterViewInit() {
-    //   this.outerFunc();
-    //}
+    ngAfterViewInit() {
+       //this.outerFunc();
+    }
     //counnn();
     //constructor
 }
