@@ -15,25 +15,25 @@ export class DashboardComponent implements AfterViewInit {
     //    this.dfdfdf = this.isAM().length;
     //    alert(this.dfdfdf)
     //}
-    private testValrrr: number = 0;
-    public outerFunc() {
-        var a = 5;
-        function innerFFF() {
-            var a = 6;
-            function deepInner() {
-                alert(a);
-                //testVal = 4;
-            }
-            deepInner();
-            //alert(testVal);
-        }
+    //private testValrrr: number = 0;
+    //public outerFunc() {
+    //    var a = 5;
+    //    function innerFFF() {
+    //        var a = 6;
+    //        function deepInner() {
+    //            alert(a);
+    //            //testVal = 4;
+    //        }
+    //        deepInner();
+    //        //alert(testVal);
+    //    }
 
-        innerFFF();
-        alert(this.testValrrr);
-    }
-    ngAfterViewInit() {
-       this.outerFunc();
-    }
+    //    innerFFF();
+    //    alert(this.testValrrr);
+    //}
+    //ngAfterViewInit() {
+    //   this.outerFunc();
+    //}
     //counnn();
     //constructor
 }
