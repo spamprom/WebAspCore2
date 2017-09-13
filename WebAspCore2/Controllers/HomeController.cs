@@ -26,20 +26,4 @@ namespace WebAspCore2.Controllers
             return View();
         }
     }
-
-    public abstract class aaa
-    {
-        aaa(string hhh)
-        {
-
-        }
-    }
-
-    public class bbb:aaa
-    {
-        public bbb()
-        {
-
-        }
-    }
 }
