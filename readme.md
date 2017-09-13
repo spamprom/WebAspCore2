@@ -2,12 +2,21 @@
 ## Делаем приложение, которое мониторит курс валют и дает совет, когда лучше ее закупать
 
 1) Сначала устанавливаем:
-  + visual studio 2017
-  + .net core 2
-  + node.js
-  + angular cli
-2) Создаем template проекта   (web -> asp.net core web application -> Angular)
+    + visual studio 2017
+    + .net core 2
+    + node.js
+    + angular cli
+2) Создаем проекта используя template Angular (web -> asp.net core web application -> Angular)
    + ![screen1](http://www.aspnet.com.ua/111/gith/screen1.png)
    + в файле package.json изменяем версии наших зависимостей на последнею  (у меня это "~4.3.4"). Так же меняем везде значет ^ на ~
-3) Добавляем проект для ORM (EF Core) 
-4) Создаем проект для Business Logic
+   + подтягиваем новые версии
+   + в файле webpack.config.js  удаляем строку   new webpack.optimize.UglifyJsPlugin(),
+   
+3) Добавляем проект для ORM (EF Core) "WebAspCore2.Data"   с типом  ->  Class Library (.Net Core)
+    + Добавляем зависимость Microsoft.EntityFrameworkCore.SqlServer  
+    + Создаем папку Models и в ней создаем class-ы , которые будут соответствовать таблице в базе данных
+    + Создаем файл ConvertMoneyContext в нем делаем DbSet для наших таблиц. Если нужно сделать не логичные связи, то это пишем в методе OnModelCreating
+    + в проекте  WebAspCore2 в файле appsettings.json пописываем строку подключения к базе данных 
+    + создаем Migration-код. Для этого открываем командную строку и в папке WebAspCore2.Data вызываем команду:  dotnet ef --startup-project ../WebAspCore2/  migrations add InitialCreate
+    
+4) Создаем проект для Business Logic "WebAspCore2.BL"  с типом  ->  Class Library (.Net Core)
