@@ -1,4 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { Money } from '../../model/money';
+import { ExchangeRate } from '../../model/exchangeRate';
+
 
 @Component({
     selector: 'dashboard',
@@ -32,6 +35,8 @@ export class DashboardComponent implements AfterViewInit {
     //    alert(this.testValrrr);
     //}
     ngAfterViewInit() {
+        //let eee: ExchangeRate = new ExchangeRate();
+        //alert(eee.ExchangeRateType);
        //this.outerFunc();
     }
     //counnn();

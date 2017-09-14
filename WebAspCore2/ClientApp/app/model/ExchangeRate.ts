@@ -4,10 +4,11 @@ export class ExchangeRate {
     ExchangeRateID: number;
     Value: number;
     Money: Money;
-    ExchangeRateType: ExchangeRateType;
+    ExchangeRateType: ExchangeRateTypeEnum = ExchangeRateTypeEnum.General;
+    Day: Date;
 }
 
-enum ExchangeRateType {
+enum ExchangeRateTypeEnum  {
     General = 1,
     Holiday = 2,
 }

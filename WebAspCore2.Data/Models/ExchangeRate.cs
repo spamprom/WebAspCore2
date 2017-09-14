@@ -11,11 +11,12 @@ namespace WebAspCore2.Data.Models
         public Guid MoneyID { get; set; }
         [Column(TypeName = "money")]
         public decimal Value { get; set; }
-        public ExchangeRateType ExchangeRateType { get; set; }
+        public ExchangeRateTypeEnum ExchangeRateType { get; set; }
         public Money Money { get; set; }
+        public DateTime Day { get; set; }
     }
 
-    public enum ExchangeRateType
+    public enum ExchangeRateTypeEnum
     {
         General = 1,
         Holiday = 2,
