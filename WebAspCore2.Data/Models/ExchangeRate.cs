@@ -17,7 +17,7 @@ namespace WebAspCore2.Data.Models
 
     public enum ExchangeRateType
     {
-        General,
-        Holiday,
+        General = 1,
+        Holiday = 2,
     }
 }

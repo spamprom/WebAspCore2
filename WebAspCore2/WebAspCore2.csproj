@@ -22,6 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\model\ExchangeRate.ts" />
+    <None Remove="ClientApp\app\model\money.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="ClientApp\dist\vendor-manifest.json" />
   </ItemGroup>
 
@@ -30,7 +35,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\app\model\" />
+    <TypeScriptCompile Include="ClientApp\app\model\exchangeRate.ts" />
+    <TypeScriptCompile Include="ClientApp\app\model\money.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
