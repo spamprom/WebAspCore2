@@ -1,6 +1,6 @@
 <br /><br /><br />
 <div *ngFor="let mon of moneys" class="list-result">
-    <money-short [moneyProp]="mon" (bigNumber)="myCallback($event)"></money-short>
+    <money-short [moneyProp]="mon" (selectMoney)="myCallback($event)"></money-short>
 </div>
 
 

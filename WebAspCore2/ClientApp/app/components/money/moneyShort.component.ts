@@ -6,19 +6,20 @@ import { Money } from "../../model/money";
     templateUrl: './moneyShort.component.html'
 })
 export class MoneyShortComponent {
+
     //public currentCount = 0;
-    
-    public incrementCounter() {
+
+    public clickOneMoney(monId: string) {
         //this.currentCount++;
-        //if (this.currentCount > 10) {
-        //    this.bigNumber.emit('vv ' + this.currentCount);
-        //}
+        if (monId != null) {
+            this.selectMoney.emit(monId);
+        }
     }
 
     public isWorkBtn(): boolean {
         return false;//this.currentCount > 3;
     }
-    @Output() bigNumber = new EventEmitter<string>();
+    @Output() selectMoney = new EventEmitter<string>();
     @Input() moneyProp: Money = new Money();
 }
 //
