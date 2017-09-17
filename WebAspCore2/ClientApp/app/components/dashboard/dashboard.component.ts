@@ -1,16 +1,34 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Money } from '../../model/money';
-import { ExchangeRate } from '../../model/exchangeRate';
-
+//import { ExchangeRate } from '../../model/exchangeRate';
+import { MoneyService } from '../../service/money.service';
 
 @Component({
     selector: 'dashboard',
-    templateUrl: './dashboard.component.html'
+    templateUrl: './dashboard.component.html',
+    providers: [MoneyService]
 })
 export class DashboardComponent implements AfterViewInit {
+
+    moneys: Money[];
+    selectedMoney: Money;
+
+    constructor(
+        private moneyService: MoneyService) { }
+
+    getMoneys(): void {
+        this.moneyService
+            .getMoneys()
+            .then(row => { this.moneys = row; });
+    }
+
+    myCallback(eee: string) {
+        alert(eee);
+    }
+
     //private dfdfdf: number;
     //private isAM(): any {
-    //    return 'dfdfdf';
+    //    return 'dfdfdf';sdsd
     //}
     //private readonly fffddf = "";
     //private counnn()
@@ -35,6 +53,9 @@ export class DashboardComponent implements AfterViewInit {
     //    alert(this.testValrrr);
     //}
     ngAfterViewInit() {
+        this.getMoneys();
+        
+        //alert(this.moneys.length)
         //let eee: ExchangeRate = new ExchangeRate();
         //alert(eee.ExchangeRateType);
        //this.outerFunc();

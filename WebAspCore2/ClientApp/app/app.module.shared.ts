@@ -4,11 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+import { MoneyService } from "./service/money.service";
+
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { MoneyComponent } from "./components/money/money.component";
+import { MoneyShortComponent } from "./components/money/moneyShort.component";
+
 
 @NgModule({
     declarations: [
@@ -16,8 +21,11 @@ import { CounterComponent } from './components/counter/counter.component';
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
-        DashboardComponent
+        DashboardComponent,
+        MoneyComponent,
+        MoneyShortComponent
     ],
+    providers: [MoneyService],
     imports: [
         CommonModule,
         HttpModule,

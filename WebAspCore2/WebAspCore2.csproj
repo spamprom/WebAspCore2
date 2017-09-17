@@ -22,8 +22,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\components\money\money.component.ts" />
+    <None Remove="ClientApp\app\components\money\moneyShort.component.ts" />
     <None Remove="ClientApp\app\model\ExchangeRate.ts" />
+    <None Remove="ClientApp\app\model\exchangeRateTypeEnum.ts" />
     <None Remove="ClientApp\app\model\money.ts" />
+    <None Remove="ClientApp\app\service\money.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,8 +39,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\money\money.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\money\moneyShort.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\model\exchangeRate.ts" />
+    <TypeScriptCompile Include="ClientApp\app\model\exchangeRateTypeEnum.ts" />
     <TypeScriptCompile Include="ClientApp\app\model\money.ts" />
+    <TypeScriptCompile Include="ClientApp\app\service\money.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

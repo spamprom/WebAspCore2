@@ -1,5 +1,5 @@
 ﻿export class Money {
-    MoneyID: string;
-    Name: string;
-    ShortName: string;
+    moneyID: string;
+    name: string;
+    shortName: string;
 }

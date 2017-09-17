@@ -1,14 +1,11 @@
 ﻿import { Money } from './money';
+import { ExchangeRateTypeEnum } from './exchangeRateTypeEnum';
 
 export class ExchangeRate {
-    ExchangeRateID: number;
-    Value: number;
-    Money: Money;
-    ExchangeRateType: ExchangeRateTypeEnum = ExchangeRateTypeEnum.General;
-    Day: Date;
+    exchangeRateID: number;
+    value: number;
+    money: Money;
+    exchangeRateType: ExchangeRateTypeEnum = ExchangeRateTypeEnum.General;
+    day: Date;
 }
 
-enum ExchangeRateTypeEnum  {
-    General = 1,
-    Holiday = 2,
-}

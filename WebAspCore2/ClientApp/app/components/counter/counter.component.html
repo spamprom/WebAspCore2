@@ -4,4 +4,11 @@
 
 <p>Current count: <strong>{{ currentCount }}</strong></p>
 
-<button (click)="incrementCounter()">Increment</button>
+<button [disabled]="isWorkBtn()"  (click)="incrementCounter()">Increment</button>
+<input type="text" [(ngModel)]="myNgModel" />
+{{ myNgModel  }}
+
+<div [ngClass]="{helloClass:true}">
+    AAAAAAAAAAARRRRRRR
+</div>
+{{customerPropBinde}}
