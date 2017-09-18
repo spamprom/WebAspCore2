@@ -12,9 +12,10 @@ using WebAspCore2.Data.Models;
 namespace WebAspCore2.Data.Migrations
 {
     [DbContext(typeof(ConvertMoneyContext))]
-    partial class ConvertMoneyContextModelSnapshot : ModelSnapshot
+    [Migration("20170918134937_IdentityAddTabel")]
+    partial class IdentityAddTabel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
