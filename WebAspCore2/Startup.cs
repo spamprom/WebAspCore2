@@ -12,6 +12,8 @@ using WebAspCore2.Data;
 using WebAspCore2.BL;
 using Microsoft.AspNetCore.Identity;
 using WebAspCore2.Data.IdentityModel;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace WebAspCore2
 {
@@ -30,16 +32,22 @@ namespace WebAspCore2
             //services.AddDbContext<ConvertMoneyContext>(opt => opt.UseInMemoryDatabase("ConvertMoneyContext"));
             services.AddDbContext<ConvertMoneyContext>(opt =>
             {
-            opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));//, b => b.MigrationsAssembly("WebAspCore2"));
+                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));//, b => b.MigrationsAssembly("WebAspCore2"));
             });
             services.AddScoped<MoneyService, MoneyService>();
-            services.AddMvc();
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                                 .RequireAuthenticatedUser()
+                                 .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
 
-                services.AddIdentity<ApplicationUser, ApplicationRole>(config =>
-                {
+            services.AddIdentity<ApplicationUser, ApplicationRole>(config =>
+            {
                     //config.SignIn.RequireConfirmedEmail = true;
                 }).AddEntityFrameworkStores<ConvertMoneyContext>()
-                .AddDefaultTokenProviders();
+            .AddDefaultTokenProviders();
             services.Configure<IdentityOptions>(options =>
             {
                 // Password settings

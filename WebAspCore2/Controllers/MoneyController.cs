@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using WebAspCore2.Data;
 using WebAspCore2.BL;
 using WebAspCore2.BL.ViewData.Moneys;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebAspCore2.Controllers
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     public class MoneyController : Controller
     {
