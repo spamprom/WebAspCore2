@@ -9,7 +9,7 @@ import { MoneyService } from "./service/money.service";
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
+import { LoginComponent } from './components/users/login.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { MoneyComponent } from "./components/money/money.component";
 import { MoneyShortComponent } from "./components/money/moneyShort.component";
@@ -20,7 +20,7 @@ import { MoneyShortComponent } from "./components/money/moneyShort.component";
         AppComponent,
         NavMenuComponent,
         CounterComponent,
-        FetchDataComponent,
+        LoginComponent,
         DashboardComponent,
         MoneyComponent,
         MoneyShortComponent
@@ -34,7 +34,7 @@ import { MoneyShortComponent } from "./components/money/moneyShort.component";
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'dashboard', component: DashboardComponent },
             { path: 'counter', component: CounterComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'User/Login', component: LoginComponent },
             { path: '**', redirectTo: 'dashboard' }
         ])
     ]
