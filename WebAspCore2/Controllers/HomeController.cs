@@ -12,7 +12,7 @@ using WebAspCore2.Data.IdentityModel;
 namespace WebAspCore2.Controllers
 {
     //[AllowAnonymous]
-    //[Authorize]
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly MoneyService moneyService;
@@ -77,7 +77,8 @@ namespace WebAspCore2.Controllers
 
             await signInManager.SignOutAsync();
 
-            return View();
+            //return View();
+            return RedirectToAction("Login", "User");
         }
 
         public IActionResult Error()

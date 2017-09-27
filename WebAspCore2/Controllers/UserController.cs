@@ -4,19 +4,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using WebAspCore2.Data.IdentityModel;
 
 namespace WebAspCore2.Controllers
 {
     [AllowAnonymous]
     public class UserController : Controller
     {
-        public IActionResult Index()
+        private readonly UserManager<ApplicationUser> userManager;
+        public UserController(UserManager<ApplicationUser> _userManager)
         {
-            return View("~/Views/Home/Index.cshtml");
+            userManager = _userManager;
         }
-        //public IActionResult Login()
-        //{
-        //    return View("~/Views/Home/Index.cshtml");
-        //}
+        public async Task<IActionResult> Index()
+        {
+            var curentUser = await userManager.GetUserAsync(HttpContext.User);
+
+            if (curentUser != null)
+                return RedirectToAction("Index", "Home");
+
+            return View();
+        }
     }
 }

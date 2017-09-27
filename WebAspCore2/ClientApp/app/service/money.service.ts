@@ -9,7 +9,7 @@ import { Money } from '../model/money';
 export class MoneyService {
 
     private headers = new Headers({ 'Content-Type': 'application/json' });
-    private moneysUrl = 'api/money';
+    private moneysUrl = 'api/data';
 
     constructor(private http: Http) { }
 
@@ -55,7 +55,7 @@ export class MoneyService {
     }
 
     private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
+        console.error('An error occurred', error);
         return Promise.reject(error.message || error);
     }
 }

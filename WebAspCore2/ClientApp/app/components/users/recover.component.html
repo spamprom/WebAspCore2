@@ -1,0 +1,15 @@
+﻿<form id="recoverform" action="#">
+    <p>Enter your e-mail address below and we will send you instructions how to recover a password.</p>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-envelope"></i></span><input class="form-control" type="text" placeholder="E-mail address" />
+    </div>
+    <div class="form-actions clearfix">
+        <div class="pull-left">
+            <a [routerLink]="['/User','Login']"  class="grey flip-link to-login">Click to login</a>
+        </div>
+        <div class="pull-right">
+            <a [routerLink]="['/User','Register']" class="blue flip-link to-register">Create new account</a>
+        </div>
+        <input type="submit" class="btn btn-block btn-inverse" value="Recover" />
+    </div>
+</form>
