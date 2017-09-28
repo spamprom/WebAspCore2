@@ -37,6 +37,7 @@
     <None Remove="ClientApp\app\model\money.ts" />
     <None Remove="ClientApp\app\service\auth.service.ts" />
     <None Remove="ClientApp\app\service\money.service.ts" />
+    <None Remove="ClientApp\ng-common.ts" />
     <None Remove="ClientApp\ng-main.ts" />
     <None Remove="ClientApp\ng-polyfills.ts" />
   </ItemGroup>
@@ -61,6 +62,7 @@
     <TypeScriptCompile Include="ClientApp\app\model\money.ts" />
     <TypeScriptCompile Include="ClientApp\app\service\auth.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\service\money.service.ts" />
+    <TypeScriptCompile Include="ClientApp\ng-common.ts" />
     <TypeScriptCompile Include="ClientApp\ng-main.ts" />
     <TypeScriptCompile Include="ClientApp\ng-polyfills.ts" />
   </ItemGroup>

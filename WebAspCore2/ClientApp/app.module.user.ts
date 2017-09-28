@@ -10,6 +10,8 @@ import { AppComponent } from './app/components/app/app.component';
 import { RecoverComponent } from './app/components/users/recover.component';
 import { RegisterComponent } from './app/components/users/register.component';
 import { LoginComponent } from './app/components/users/login.component';
+
+
 import { AuthService } from "./app/service/auth.service";
 
 

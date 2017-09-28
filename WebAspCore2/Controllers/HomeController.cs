@@ -75,9 +75,14 @@ namespace WebAspCore2.Controllers
             //    model.Password, model.RememberMe, lockoutOnFailure: false);
             //if (result.Succeeded)
 
-            await signInManager.SignOutAsync();
+            //await signInManager.SignOutAsync();
+            //return RedirectToAction("Login", "User");
+            return View();
+        }
 
-            //return View();
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
             return RedirectToAction("Login", "User");
         }
 

@@ -14,7 +14,7 @@ export class AuthService {
     constructor(private http: Http, private router: Router) { }
 
     public login(login: Login): Promise<boolean> {
-        const url = `${this.dataUrl}/Login`;
+        const url = this.dataUrl + `/Login`;
         return this.http
             .post(url, JSON.stringify(login), { headers: this.headers })
             .toPromise()
@@ -30,7 +30,8 @@ export class AuthService {
         this.http.get(url);
 
         //this.router.navigate(['/User', 'Login']);
-        this.router.navigateByUrl('/User/Login');
+        //this.router.navigateByUrl('/User/Login');
+        document.location.href = '/';
     }
 
 

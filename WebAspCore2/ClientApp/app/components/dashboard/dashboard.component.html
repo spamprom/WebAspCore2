@@ -1,6 +1,19 @@
-<br /><br /><br />
-<div *ngFor="let mon of moneys" class="list-result">
-    <money-short [moneyProp]="mon" (selectMoney)="myCallback($event)"></money-short>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="widget-box">
+            <div class="widget-title">
+                <span class="icon">
+                    <i class="fa fa-th"></i>
+                </span>
+                <h5>Static table</h5>
+            </div>
+            <div class="widget-content nopadding">
+                page dashboard
+                <br />
+                <a [routerLink]="['/money']" class="flip-link to-recover grey">open money</a>
+                <br />
+                
+            </div>
+        </div>
+    </div>
 </div>
-
-

@@ -1,16 +1,39 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
+<head lang="en">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - convert money</title>
-    <base href="~/" />
-    
-    <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
-</head>
-<body>
-    @RenderBody()
 
+    <link rel="stylesheet" href="/Content/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Content/css/font-awesome.css" />
+    <link rel="stylesheet" href="/Content/css/jquery-ui.css" />
+    <link rel="stylesheet" href="/Content/css/icheck/flat/blue.css" />
+    <link rel="stylesheet" href="/Content/css/select2.css" />
+    <link rel="stylesheet" href="/Content/css/unicorn.css" />
+
+    <base href="/">
+    <script src="/Content/js/jquery.min.js"></script>
+    <script src="/Content/js/jquery-ui.custom.min.js"></script>
+
+    <script type="text/javascript" src="/dist/commonUser.js"></script>
+</head>
+<body data-color="grey" class="flat">
+    <div id="wrapper">
+        @RenderBody()
+
+        <div class="row">
+            <div id="footer" class="col-xs-12">
+                2012 - @DateTime.Now.Year &copy; 
+            </div>
+        </div>
+    </div>
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+
+
+
+
+

@@ -20,10 +20,8 @@ module.exports = (env) => {
 
         entry: {
             //mainUserCss: './Content/scss/main-user.scss',
-
-            user: './ClientApp/ng-main'
-            //user: './ClientApp/app.module.user'//,
-            //main: './ClientApp/app.module.shared'
+            user: './ClientApp/ng-main',
+            main: './ClientApp/ng-common'
         },
         output: {
             filename: '[name].js',
@@ -46,7 +44,7 @@ module.exports = (env) => {
         plugins: [
             new CheckerPlugin(),
             new webpack.optimize.CommonsChunkPlugin({
-                name: "commonUser", minChunks: 2, chunks: ["user"] }),
+                name: "commonUser", minChunks: 2, chunks: ["user", "main"] }),
             //new webpack.optimize.CommonsChunkPlugin({
             //    name: "commonMain", minChunks: 2, chunks: ["user", "main"]
             //}),

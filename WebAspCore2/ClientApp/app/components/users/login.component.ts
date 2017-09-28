@@ -26,7 +26,8 @@ export class LoginComponent {
             this.authService.login(this.login).then(res => {
                 if (res) {
                     this.hasError = false;
-                    this.router.navigate(['/User', 'Register']);
+                    //this.router.navigate(['/User', 'Home']);
+                    document.location.href = '/';
                 }
                 else {
                     this.hasError = true;

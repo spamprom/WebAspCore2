@@ -1,10 +1,9 @@
 @{
-    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
+    ViewData["Title"] = "Home";
 }
-
-<app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>
-
-<script src="~/dist/vendor.js" asp-append-version="true"></script>
+<main-component>Loading...</main-component>
 @section scripts {
-    <script src="~/dist/main-client.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="/dist/main.js"></script>
 }
+

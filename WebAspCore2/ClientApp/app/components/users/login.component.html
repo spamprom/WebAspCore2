@@ -11,7 +11,7 @@
             <a [routerLink]="['/User', 'Register']" class="flip-link to-register blue" >Create new account</a>
         </div>
         <div class="pull-right">
-            <a [routerLink]="['/User', 'Login']" class="flip-link to-recover grey" >Lost password?</a>
+            <a [routerLink]="['/User', 'Recover']" class="flip-link to-recover grey" >Lost password?</a>
         </div>
         <input type="submit" (click)="onLogin()"  *ngIf="!startLogin" class="btn btn-block btn-primary btn-default" value="Login" />
     </div>
