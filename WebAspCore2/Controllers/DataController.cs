@@ -38,7 +38,12 @@ namespace WebAspCore2.Controllers
                 return new ObjectResult(new { result.Succeeded });
             }
         }
-
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return new ObjectResult(new { Succeeded = true });
+        }
 
         [HttpGet]
         public async Task<IEnumerable<TMoney>> GetMoneyAll()
