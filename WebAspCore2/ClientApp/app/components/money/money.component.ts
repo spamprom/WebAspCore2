@@ -21,8 +21,13 @@ export class MoneyComponent implements AfterViewInit {
             .then(row => { this.moneys = row; });
     }
 
-    onSelectMoney(eee: string) {
-        alert(eee);
+    onSelectMoney(moneyId: string) {
+        this.moneyService
+            .getMoney(moneyId)
+            .then(row => {
+                //this.selectedMoney = row;
+                alert(row.shortName);
+            });
     }
     
     ngAfterViewInit() {

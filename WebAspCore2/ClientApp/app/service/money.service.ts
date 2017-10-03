@@ -21,11 +21,11 @@ export class MoneyService {
     }
 
 
-    getMoney(id: number): Promise<Money> {
+    getMoney(id: string): Promise<Money> {
         const url = `${this.moneysUrl}/${id}`;
         return this.http.get(url)
             .toPromise()
-            .then(response => response.json().data as Money)
+            .then(response => response.json() as Money)
             .catch(this.handleError);
     }
 

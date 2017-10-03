@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule} from '@angular/platform-browser';
 
 import { MainComponent } from './app/components/app/main.component';
 import { DashboardComponent } from "./app/components/dashboard/dashboard.component";

@@ -756,13 +756,13 @@ a:hover {
   }
 }
 #content-header {
-  background-color: #f6f6f6;
-  border-top-left-radius: 8px;
-  min-height: 92px;
-  padding-top: 5px;
-  width: 100%;
-  margin-top: -38px;
-  z-index: 20;
+    background-color: #f6f6f6;
+    border-top-left-radius: 8px;
+    min-height: 50px;
+    padding-top: 5px;
+    width: 100%;
+    margin-top: -38px;
+    z-index: 20;
 }
 #content-header h1 {
   color: #555555;
@@ -773,7 +773,7 @@ a:hover {
 }
 #content-header h1,
 #content-header > .btn-group {
-  margin-top: 25px;
+  margin-top: 5px;
 }
 #content-header > .btn-group {
   float: right;
