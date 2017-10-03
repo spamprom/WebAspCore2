@@ -1,4 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: 'dashboard',
@@ -6,6 +7,13 @@ import { Component, AfterViewInit } from '@angular/core';
     providers: []
 })
 export class DashboardComponent implements AfterViewInit {
+    labelShow: string;
+    constructor(private activatedRoute: ActivatedRoute) {
+        this.activatedRoute.queryParams.subscribe((param: any) => {
+            this.labelShow = param['isSuccess'];
+        });
+    }
+
     ngAfterViewInit() {
         
     }

@@ -46,7 +46,7 @@ module.exports = (env) => {
             new webpack.optimize.CommonsChunkPlugin({
                 name: "commonUser", minChunks: 2, chunks: ["user", "main"] }),
             //new webpack.optimize.CommonsChunkPlugin({
-            //    name: "commonMain", minChunks: 2, chunks: ["user", "main"]
+            //    name: "commonMain", minChunks: 2, chunks: ["subModule22", "subModule33"]
             //}),
             new webpack.IgnorePlugin(/\.\/pathnameplugin/)
         ],

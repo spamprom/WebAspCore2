@@ -11,9 +11,14 @@
             <td>{{moneyProp.name}}</td>
             <td>{{moneyProp.shortName}}</td>
             <td>
+                
+                <a [routerLink]="['/money',moneyProp.moneyID]" ><i class="fa fa-pencil"></i></a>
+
+
                 <a href="#" (click)="clickOneMoney(moneyProp.moneyID);$event.preventDefault();">
-                    <i class="fa fa-pencil"></i>
-                </a>
+        <i class="fa fa-eye"></i>
+    </a>
+
             </td>
         </tr>
     </tbody>

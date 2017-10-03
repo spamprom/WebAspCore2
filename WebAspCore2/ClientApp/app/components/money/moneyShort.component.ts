@@ -1,4 +1,6 @@
 ﻿import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from "@angular/router";
+
 import { Money } from "../../model/money";
 
 @Component({
@@ -8,10 +10,13 @@ import { Money } from "../../model/money";
 })
 export class MoneyShortComponent {
 
+    constructor(private router: Router) {
+    }
 
     public clickOneMoney(monId: string) {
         if (monId != null) {
-            this.onSelectMoney.emit(monId);
+            //this.onSelectMoney.emit(monId);
+            this.router.navigate(['/dashboard'], { queryParams: { 'isSuccess': monId } });
         }
     }
 

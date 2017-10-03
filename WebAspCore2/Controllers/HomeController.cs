@@ -45,7 +45,7 @@ namespace WebAspCore2.Controllers
 
             //}
 
-            var curentUser = await userManager.GetUserAsync(HttpContext.User);
+            //var curentUser = await userManager.GetUserAsync(HttpContext.User);
 
 
             //var deleUser = await userManager.FindByIdAsync("C998ADD8-4F14-401D-D195-08D4FF675896");

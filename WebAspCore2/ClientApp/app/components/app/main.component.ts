@@ -15,23 +15,7 @@ export class MainComponent implements AfterViewInit {
     constructor(private router: Router, private titleService: Title) {
         router.events.forEach((event) => {
             if (event instanceof NavigationEnd) {
-                this.linkDashboard = false;
-                this.linkMoney = false;
-                switch (event.urlAfterRedirects) {
-                    case '/dashboard':
-                        {
-                            this.linkDashboard = true;
-                            this.titleService.setTitle('Dashboard' + this.prefixTitle);
-                        }
-                        break;
-                    case '/money':
-                        {
-                            this.linkMoney = true;
-                            this.titleService.setTitle('Money' + this.prefixTitle);
-                        }
-                        break;
-                    default:
-                }
+                this.menuActived(event.urlAfterRedirects);
             }
             // NavigationEnd
             // NavigationCancel
@@ -40,11 +24,21 @@ export class MainComponent implements AfterViewInit {
         });
     }
     ngAfterViewInit() {
-       this.getdfdf();
     }
 
-    getdfdf(): void {
-        
+    menuActived(url: string): void {
+        this.linkDashboard = false;
+        this.linkMoney = false;
+        if (url != null) {
+            if (url.indexOf('/dashboard') != -1) {
+                this.linkDashboard = true;
+                this.titleService.setTitle('Dashboard' + this.prefixTitle);
+            }
+            if (url.indexOf('/money') != -1) {
+                this.linkMoney = true;
+                this.titleService.setTitle('Money' + this.prefixTitle);
+            }
+        }
     }
 
     //menu

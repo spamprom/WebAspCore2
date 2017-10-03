@@ -9,13 +9,15 @@ import { MainComponent } from './app/components/app/main.component';
 import { DashboardComponent } from "./app/components/dashboard/dashboard.component";
 import { MoneyComponent } from "./app/components/money/money.component";
 import { MoneyShortComponent } from "./app/components/money/moneyShort.component";
+import { MoneyDataComponent } from "./app/components/money/moneyData.component";
+import { NotFoundComponent } from "./app/components/dashboard/notFound.component";
 
 @NgModule({
     bootstrap: [
         MainComponent
     ],
     declarations: [
-        MainComponent, DashboardComponent, MoneyComponent, MoneyShortComponent
+        MainComponent, DashboardComponent, MoneyComponent, MoneyShortComponent, MoneyDataComponent, NotFoundComponent
     ],
     imports: [
         BrowserModule,
@@ -26,7 +28,9 @@ import { MoneyShortComponent } from "./app/components/money/moneyShort.component
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
             { path: 'dashboard', component: DashboardComponent },
             { path: 'money', component: MoneyComponent },
-            { path: '**', redirectTo: 'dashboard' }
+            { path: 'money/:id', component: MoneyDataComponent },
+            //{ path: '**', redirectTo: 'dashboard' }
+            { path: '**', component: NotFoundComponent }
         ])
     ],
     exports: [RouterModule],
