@@ -8,13 +8,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MainComponent } from './app/components/app/main.component';
 import { DashboardComponent } from "./app/components/dashboard/dashboard.component";
 import { MoneyComponent } from "./app/components/money/money.component";
+import { MoneyShortComponent } from "./app/components/money/moneyShort.component";
 
 @NgModule({
     bootstrap: [
         MainComponent
     ],
     declarations: [
-        MainComponent, DashboardComponent, MoneyComponent
+        MainComponent, DashboardComponent, MoneyComponent, MoneyShortComponent
     ],
     imports: [
         BrowserModule,

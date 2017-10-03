@@ -1,11 +1,11 @@
 ﻿<div class="row">
     <div class="col-xs-12">
-        <div class="widget-box">
-            page money
-            <br />
-            <br />
-            <a [routerLink]="['/dashboard']" class="flip-link to-recover grey">dashboard</a>
-            <br />
+        <div *ngIf="moneys!=null && moneys.length>0">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <money-short [moneys]="moneys" (onSelectMoney)="onSelectMoney($event)"></money-short>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,3 +1,20 @@
-﻿<a href="#" (click)="clickOneMoney(moneyProp.moneyID);$event.preventDefault();">
-    {{moneyProp.name}} - {{moneyProp.shortName}}
-</a>
+﻿<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Symbol</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let moneyProp of moneys">
+            <td>{{moneyProp.name}}</td>
+            <td>{{moneyProp.shortName}}</td>
+            <td>
+                <a href="#" (click)="clickOneMoney(moneyProp.moneyID);$event.preventDefault();">
+                    <i class="fa fa-pencil"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

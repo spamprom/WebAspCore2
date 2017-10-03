@@ -17,8 +17,8 @@
         <input type="text" placeholder="Search here..." /><button type="submit" class="tip-right" title="Search"><i class="fa fa-search"></i></button>
     </div>
     <ul>
-        <li><a [routerLink]="['/dashboard']"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-        <li><a [routerLink]="['/money']"><i class="fa fa-th"></i> <span>Money</span></a></li>
+        <li [ngClass]="{'active':linkDashboard}"><a [routerLink]="['/dashboard']" ><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+        <li [ngClass]="{'active':linkMoney}"><a [routerLink]="['/money']" ><i class="fa fa-th"></i> <span>Money</span></a></li>
 
         <li class="submenu">
             <a href="#"><i class="fa fa-flask"></i> <span>UI Lab</span> <i class="arrow fa fa-chevron-right"></i></a>
