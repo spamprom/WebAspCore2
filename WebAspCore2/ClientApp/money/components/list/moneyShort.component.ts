@@ -1,7 +1,7 @@
 ﻿import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from "@angular/router";
+import { Money } from "../../model/money";
 
-import { Money } from "../../../model/money";
 
 @Component({
     selector: 'money-short',

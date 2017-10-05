@@ -27,18 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\app\app.module.user.ts" />
-    <None Remove="ClientApp\app\components\money\moneyList.component.ts" />
-    <None Remove="ClientApp\app\components\money\money.routes.ts" />
-    <None Remove="ClientApp\app\components\money\moneyShort.component.ts" />
-    <None Remove="ClientApp\app\components\users\register.component.ts" />
-    <None Remove="ClientApp\app\model\ExchangeRate.ts" />
-    <None Remove="ClientApp\app\model\exchangeRateTypeEnum.ts" />
-    <None Remove="ClientApp\app\model\Login.ts" />
-    <None Remove="ClientApp\app\model\money.ts" />
-    <None Remove="ClientApp\app\service\auth.service.ts" />
-    <None Remove="ClientApp\app\service\money.service.ts" />
-    <None Remove="ClientApp\ng-common.ts" />
+    <None Remove="ClientApp\auth\service\auth.service.ts" />
+    <None Remove="ClientApp\auth\service\money.service.ts" />
     <None Remove="ClientApp\ng-main.ts" />
     <None Remove="ClientApp\ng-polyfills.ts" />
   </ItemGroup>
@@ -52,20 +42,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app.module.user.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\money\list\moneyList.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\money\money.routes.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\money\list\moneyShort.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\users\login.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\users\register.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\model\exchangeRate.ts" />
-    <TypeScriptCompile Include="ClientApp\app\model\exchangeRateTypeEnum.ts" />
-    <TypeScriptCompile Include="ClientApp\app\model\login.ts" />
-    <TypeScriptCompile Include="ClientApp\app\model\money.ts" />
-    <TypeScriptCompile Include="ClientApp\app\service\auth.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\service\money.service.ts" />
-    <TypeScriptCompile Include="ClientApp\ng-common.ts" />
+    <TypeScriptCompile Include="ClientApp\auth\app.module.user.ts" />
+    <TypeScriptCompile Include="ClientApp\money\components\list\moneyList.component.ts" />
+    <TypeScriptCompile Include="ClientApp\money\money.module.ts" />
+    <TypeScriptCompile Include="ClientApp\money\money.routing.ts" />
+    <TypeScriptCompile Include="ClientApp\money\components\list\moneyShort.component.ts" />
+    <TypeScriptCompile Include="ClientApp\auth\components\login\login.component.ts" />
+    <TypeScriptCompile Include="ClientApp\auth\components\register\register.component.ts" />
+    <TypeScriptCompile Include="ClientApp\money\model\exchangeRate.ts" />
+    <TypeScriptCompile Include="ClientApp\money\model\exchangeRateTypeEnum.ts" />
+    <TypeScriptCompile Include="ClientApp\auth\model\login.ts" />
+    <TypeScriptCompile Include="ClientApp\money\model\money.ts" />
+    <TypeScriptCompile Include="ClientApp\auth\service\auth.service.ts" />
+    <TypeScriptCompile Include="ClientApp\money\service\money.service.ts" />
     <TypeScriptCompile Include="ClientApp\ng-main.ts" />
+    <TypeScriptCompile Include="ClientApp\auth\ng-main.ts" />
     <TypeScriptCompile Include="ClientApp\ng-polyfills.ts" />
   </ItemGroup>
 

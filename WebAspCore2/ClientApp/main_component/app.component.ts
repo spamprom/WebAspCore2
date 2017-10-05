@@ -3,14 +3,14 @@ import { Router, NavigationEnd } from "@angular/router";
 import { Title } from '@angular/platform-browser';
 
 @Component({
-    selector: 'main-component',
-    templateUrl: './main.component.html',
-    styleUrls: ['./main.component.scss'],
+    selector: 'app-component',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
     providers: [
         Title
     ]
 })
-export class MainComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit {
     prefixTitle: string = ' - convert money';
     constructor(private router: Router, private titleService: Title) {
         router.events.forEach((event) => {

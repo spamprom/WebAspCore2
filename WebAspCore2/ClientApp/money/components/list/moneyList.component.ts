@@ -1,7 +1,7 @@
 ﻿import { Component, AfterViewInit } from '@angular/core';
-import { Money } from "../../../model/money";
-import { MoneyService } from '../../../service/money.service';
 import { Router } from "@angular/router";
+import { MoneyService } from "../../service/money.service";
+import { Money } from "../../model/money";
 
 @Component({
     selector: 'money-list',

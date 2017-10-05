@@ -2,8 +2,8 @@
 import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
+import { Money } from "../model/money";
 
-import { Money } from '../model/money';
 
 @Injectable()
 export class MoneyService {

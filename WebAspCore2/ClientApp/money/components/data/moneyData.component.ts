@@ -1,7 +1,9 @@
 import { Component, AfterViewInit  } from '@angular/core';
-import { Money } from "../../../model/money";
 import { Router, ActivatedRoute } from "@angular/router";
-import { MoneyService } from '../../../service/money.service';
+import { MoneyService } from "../../service/money.service";
+import { Money } from "../../model/money";
+
+
 
 @Component({
     selector: 'moneyData',

@@ -5,14 +5,11 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app/components/app/app.component';
-
-import { RecoverComponent } from './app/components/users/recover.component';
-import { RegisterComponent } from './app/components/users/register.component';
-import { LoginComponent } from './app/components/users/login.component';
-
-
-import { AuthService } from "./app/service/auth.service";
+import { AuthService } from "./service/auth.service";
+import { AppComponent } from "./components/main_component/app.component";
+import { LoginComponent } from "./components/login/login.component";
+import { RecoverComponent } from "./components/recover/recover.component";
+import { RegisterComponent } from "./components/register/register.component";
 
 
 @NgModule({
@@ -30,7 +27,7 @@ import { AuthService } from "./app/service/auth.service";
         RouterModule.forRoot([
             { path: '', redirectTo: '/User/Login', pathMatch: 'full' },
             { path: 'User/Login', component: LoginComponent },
-            { path: 'User/Recover', component: RecoverComponent },//:id
+            { path: 'User/Recover', component: RecoverComponent },
             { path: 'User/Register', component: RegisterComponent },
             { path: '**', redirectTo: 'User/Login' }
         ])

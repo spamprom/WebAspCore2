@@ -1,10 +1,11 @@
 ﻿import { Injectable, EventEmitter } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { Router } from "@angular/router";
-
 import 'rxjs/add/operator/toPromise';
 
-import { Login } from '../model/login';
+
+import { Login } from "../model/Login";
+
 
 @Injectable()
 export class AuthService {

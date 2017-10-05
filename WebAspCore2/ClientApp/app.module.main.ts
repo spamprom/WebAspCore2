@@ -5,34 +5,28 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserModule} from '@angular/platform-browser';
 
-import { MainComponent } from './app/components/app/main.component';
-import { DashboardComponent } from "./app/components/dashboard/dashboard.component";
-import { MoneyShortComponent } from "./app/components/money/list/moneyShort.component";
-import { MoneyDataComponent } from "./app/components/money/data/moneyData.component";
-import { NotFoundComponent } from "./app/components/dashboard/notFound.component";
-import { MoneysComponent } from "./app/components/money/moneys.component";
 
-import { MONEY_CHILD_ROUTES } from "./app/components/money/money.routes";
-import { MoneyListComponent } from "./app/components/money/list/moneyList.component";
+import { DashboardComponent } from "./shared/components/dashboard/dashboard.component";
+import { NotFoundComponent } from "./shared/components/notFound/notFound.component";
+import { AppComponent } from "./main_component/app.component";
+import { UserModule } from "./money/money.module";
 
 @NgModule({
     bootstrap: [
-        MainComponent
+        AppComponent
     ],
     declarations: [
-        MainComponent, DashboardComponent, MoneyShortComponent, MoneyDataComponent, NotFoundComponent, MoneysComponent, MoneyListComponent
+        AppComponent, DashboardComponent, NotFoundComponent
     ],
     imports: [
         BrowserModule,
         CommonModule,
         HttpModule,
         FormsModule,
+        UserModule,
         RouterModule.forRoot([
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
             { path: 'dashboard', component: DashboardComponent },
-
-            { path: 'moneys', component: MoneysComponent, children: MONEY_CHILD_ROUTES }, 
-
             { path: '404', component: NotFoundComponent },
             { path: '**', redirectTo: '/404' }
         ])

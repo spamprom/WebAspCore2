@@ -20,8 +20,8 @@ module.exports = (env) => {
 
         entry: {
             //mainUserCss: './Content/scss/main-user.scss',
-            user: './ClientApp/ng-main',
-            main: './ClientApp/ng-common'
+            user: './ClientApp/auth/ng-main',
+            main: './ClientApp/ng-main'
         },
         output: {
             filename: '[name].js',
