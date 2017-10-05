@@ -28,7 +28,8 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\app.module.user.ts" />
-    <None Remove="ClientApp\app\components\money\money.component.ts" />
+    <None Remove="ClientApp\app\components\money\moneyList.component.ts" />
+    <None Remove="ClientApp\app\components\money\money.routes.ts" />
     <None Remove="ClientApp\app\components\money\moneyShort.component.ts" />
     <None Remove="ClientApp\app\components\users\register.component.ts" />
     <None Remove="ClientApp\app\model\ExchangeRate.ts" />
@@ -52,8 +53,9 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app.module.user.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\money\money.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\money\moneyShort.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\money\list\moneyList.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\money\money.routes.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\money\list\moneyShort.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\login.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\register.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\model\exchangeRate.ts" />

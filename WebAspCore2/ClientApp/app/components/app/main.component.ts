@@ -34,9 +34,13 @@ export class MainComponent implements AfterViewInit {
                 this.linkDashboard = true;
                 this.titleService.setTitle('Dashboard' + this.prefixTitle);
             }
-            if (url.indexOf('/money') != -1) {
+            if (url.indexOf('/moneys') != -1) {
                 this.linkMoney = true;
                 this.titleService.setTitle('Money' + this.prefixTitle);
+            }
+            if (url.indexOf('/404') != -1) {
+                this.linkMoney = true;
+                this.titleService.setTitle('404' + this.prefixTitle);
             }
         }
     }

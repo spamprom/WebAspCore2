@@ -7,17 +7,20 @@ import { BrowserModule} from '@angular/platform-browser';
 
 import { MainComponent } from './app/components/app/main.component';
 import { DashboardComponent } from "./app/components/dashboard/dashboard.component";
-import { MoneyComponent } from "./app/components/money/money.component";
-import { MoneyShortComponent } from "./app/components/money/moneyShort.component";
-import { MoneyDataComponent } from "./app/components/money/moneyData.component";
+import { MoneyShortComponent } from "./app/components/money/list/moneyShort.component";
+import { MoneyDataComponent } from "./app/components/money/data/moneyData.component";
 import { NotFoundComponent } from "./app/components/dashboard/notFound.component";
+import { MoneysComponent } from "./app/components/money/moneys.component";
+
+import { MONEY_CHILD_ROUTES } from "./app/components/money/money.routes";
+import { MoneyListComponent } from "./app/components/money/list/moneyList.component";
 
 @NgModule({
     bootstrap: [
         MainComponent
     ],
     declarations: [
-        MainComponent, DashboardComponent, MoneyComponent, MoneyShortComponent, MoneyDataComponent, NotFoundComponent
+        MainComponent, DashboardComponent, MoneyShortComponent, MoneyDataComponent, NotFoundComponent, MoneysComponent, MoneyListComponent
     ],
     imports: [
         BrowserModule,
@@ -27,10 +30,11 @@ import { NotFoundComponent } from "./app/components/dashboard/notFound.component
         RouterModule.forRoot([
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
             { path: 'dashboard', component: DashboardComponent },
-            { path: 'money', component: MoneyComponent },
-            { path: 'money/:id', component: MoneyDataComponent },
-            //{ path: '**', redirectTo: 'dashboard' }
-            { path: '**', component: NotFoundComponent }
+
+            { path: 'moneys', component: MoneysComponent, children: MONEY_CHILD_ROUTES }, 
+
+            { path: '404', component: NotFoundComponent },
+            { path: '**', redirectTo: '/404' }
         ])
     ],
     exports: [RouterModule],

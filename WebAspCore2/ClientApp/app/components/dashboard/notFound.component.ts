@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from "@angular/router";
 
 @Component({
     selector: 'notFound',
@@ -6,4 +7,13 @@ import { Component } from '@angular/core';
     styleUrls: [ 'notFound.component.scss']
 })
 export class NotFoundComponent {
+
+    urlFrom: string = "";
+    constructor(private router: Router) {
+        router.events.forEach((event) => {
+            if (event instanceof NavigationEnd) {
+                this.urlFrom = event.url;
+            }
+        });
+    }
 }

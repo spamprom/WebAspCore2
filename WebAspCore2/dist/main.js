@@ -30,7 +30,7 @@ let MainComponent = class MainComponent {
         this.linkDashboard = true;
         this.linkMoney = false;
         router.events.forEach((event) => {
-            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* NavigationEnd */]) {
+            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* NavigationEnd */]) {
                 this.menuActived(event.urlAfterRedirects);
             }
             // NavigationEnd
@@ -53,14 +53,18 @@ let MainComponent = class MainComponent {
                 this.linkMoney = true;
                 this.titleService.setTitle('Money' + this.prefixTitle);
             }
+            if (url.indexOf('/404') != -1) {
+                this.linkMoney = true;
+                this.titleService.setTitle('404' + this.prefixTitle);
+            }
         }
     }
 };
 MainComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'main-component',
-        template: __webpack_require__(177),
-        styles: [__webpack_require__(222)],
+        template: __webpack_require__(179),
+        styles: [__webpack_require__(225)],
         providers: [
             __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* Title */]
         ]
@@ -103,10 +107,10 @@ let DashboardComponent = class DashboardComponent {
 DashboardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'dashboard',
-        template: __webpack_require__(178),
+        template: __webpack_require__(180),
         providers: []
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* ActivatedRoute */]])
 ], DashboardComponent);
 
 
@@ -119,21 +123,36 @@ DashboardComponent = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NotFoundComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 let NotFoundComponent = class NotFoundComponent {
+    constructor(router) {
+        this.router = router;
+        this.urlFrom = "";
+        router.events.forEach((event) => {
+            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* NavigationEnd */]) {
+                this.urlFrom = event.url;
+            }
+        });
+    }
 };
 NotFoundComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'notFound',
-        template: __webpack_require__(179),
-        styles: [__webpack_require__(223)]
-    })
+        template: __webpack_require__(181),
+        styles: [__webpack_require__(226)]
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
 ], NotFoundComponent);
 
 
@@ -144,9 +163,9 @@ NotFoundComponent = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MoneyComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MoneyListComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_money_service__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_money_service__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(8);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -160,7 +179,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-let MoneyComponent = class MoneyComponent {
+let MoneyListComponent = class MoneyListComponent {
     constructor(moneyService, router) {
         this.moneyService = moneyService;
         this.router = router;
@@ -177,77 +196,20 @@ let MoneyComponent = class MoneyComponent {
         this.getMoneys();
     }
 };
-MoneyComponent = __decorate([
+MoneyListComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
-        selector: 'money-one',
-        template: __webpack_require__(180),
+        selector: 'money-list',
+        template: __webpack_require__(183),
         providers: [__WEBPACK_IMPORTED_MODULE_1__service_money_service__["a" /* MoneyService */]]
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__service_money_service__["a" /* MoneyService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
-], MoneyComponent);
+], MoneyListComponent);
 
 
 
 /***/ }),
 
 /***/ 106:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MoneyDataComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_money__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_money_service__ = __webpack_require__(66);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-let MoneyDataComponent = class MoneyDataComponent {
-    constructor(moneyService, router, activatedRoute) {
-        this.moneyService = moneyService;
-        this.router = router;
-        this.activatedRoute = activatedRoute;
-        this.item = new __WEBPACK_IMPORTED_MODULE_1__model_money__["a" /* Money */]();
-        this.activatedRoute.params.subscribe((param) => {
-            this.moneyId = param['id'];
-        });
-    }
-    ngAfterViewInit() {
-        this.getMoney();
-    }
-    getMoney() {
-        this.moneyService
-            .getMoney(this.moneyId)
-            .then(row => {
-            this.item = row;
-        });
-    }
-};
-MoneyDataComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
-        selector: 'moneyData',
-        template: __webpack_require__(181),
-        styles: [__webpack_require__(224)],
-        providers: [__WEBPACK_IMPORTED_MODULE_3__service_money_service__["a" /* MoneyService */]]
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__service_money_service__["a" /* MoneyService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]])
-], MoneyDataComponent);
-
-
-
-/***/ }),
-
-/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -288,8 +250,8 @@ __decorate([
 MoneyShortComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'money-short',
-        template: __webpack_require__(182),
-        styles: [__webpack_require__(225)]
+        template: __webpack_require__(184),
+        styles: [__webpack_require__(228)]
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
 ], MoneyShortComponent);
@@ -298,191 +260,52 @@ MoneyShortComponent = __decorate([
 
 /***/ }),
 
-/***/ 112:
+/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-class Money {
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Money;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__list_moneyList_component__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__data_moneyData_component__ = __webpack_require__(65);
+
+
+const MONEY_CHILD_ROUTES = [
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_0__list_moneyList_component__["a" /* MoneyListComponent */] },
+    { path: ':id', component: __WEBPACK_IMPORTED_MODULE_1__data_moneyData_component__["a" /* MoneyDataComponent */] },
+];
+/* harmony export (immutable) */ __webpack_exports__["a"] = MONEY_CHILD_ROUTES;
 
 
 
 /***/ }),
 
-/***/ 168:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 108:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(13)(undefined);
-// imports
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MoneysComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 
+let MoneysComponent = class MoneysComponent {
+};
+MoneysComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+        selector: 'moneys',
+        template: __webpack_require__(185),
+        styles: [__webpack_require__(229)]
+    })
+], MoneysComponent);
 
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 169:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(13)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
 
 
 /***/ }),
 
-/***/ 170:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(13)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 171:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(13)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "a i.fa {\n  color: black;\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 177:
-/***/ (function(module, exports) {
-
-module.exports = "<div id=\"header\">\r\n    <h1><a href=\"/index.html\">Unicorn Admin</a></h1>\r\n    <a id=\"menu-trigger\" href=\"#\"><i class=\"fa fa-align-justify\"></i></a>\r\n</div>\r\n<div id=\"user-nav\">\r\n    <ul class=\"btn-group\">\r\n        <li class=\"btn\"><a title=\"\" href=\"#\"><i class=\"fa fa-user\"></i> <span class=\"text\">Profile</span></a></li>\r\n        <li class=\"btn dropdown\" id=\"menu-messages\">\r\n            <a href=\"#\" data-toggle=\"dropdown\" data-target=\"#menu-messages\" class=\"dropdown-toggle\"><i class=\"fa fa-envelope\"></i> <span class=\"text\">Messages</span> <span class=\"label label-danger\">5</span> <b class=\"caret\"></b></a>\r\n        </li>\r\n        <li class=\"btn\"><a title=\"\" href=\"#\"><i class=\"fa fa-cog\"></i> <span class=\"text\">Settings</span></a></li>\r\n        <li class=\"btn\"><a title=\"\" href=\"/Home/Logout\"><i class=\"fa fa-share\"></i> <span class=\"text\">Logout</span></a></li>\r\n    </ul>\r\n</div>\r\n<div id=\"sidebar\">\r\n    <div id=\"search\">\r\n        <input type=\"text\" placeholder=\"Search here...\" /><button type=\"submit\" class=\"tip-right\" title=\"Search\"><i class=\"fa fa-search\"></i></button>\r\n    </div>\r\n    <ul>\r\n        <li [ngClass]=\"{'active':linkDashboard}\"><a [routerLink]=\"['/dashboard']\" ><i class=\"fa fa-home\"></i> <span>Dashboard</span></a></li>\r\n        <li [ngClass]=\"{'active':linkMoney}\"><a [routerLink]=\"['/money']\" ><i class=\"fa fa-th\"></i> <span>Money</span></a></li>\r\n\r\n        <li class=\"submenu\">\r\n            <a href=\"#\"><i class=\"fa fa-flask\"></i> <span>UI Lab</span> <i class=\"arrow fa fa-chevron-right\"></i></a>\r\n            <ul>\r\n                <li><a href=\"interface.html\">Interface Elements</a></li>\r\n                <li><a href=\"jquery-ui.html\">jQuery UI</a></li>\r\n                <li><a href=\"buttons.html\">Buttons &amp; icons</a></li>\r\n            </ul>\r\n        </li>\r\n        <li class=\"submenu\">\r\n            <a href=\"#\"><i class=\"fa fa-th-list\"></i> <span>Form elements</span> <i class=\"arrow fa fa-chevron-right\"></i></a>\r\n            <ul>\r\n                <li><a href=\"form-common.html\">Common elements</a></li>\r\n                <li><a href=\"form-validation.html\">Validation</a></li>\r\n                <li><a href=\"form-wizard.html\">Wizard</a></li>\r\n            </ul>\r\n        </li>\r\n        \r\n        <li><a href=\"grid.html\"><i class=\"fa fa-th-list\"></i> <span>Grid Layout</span></a></li>\r\n        <li class=\"submenu\">\r\n            <a href=\"#\"><i class=\"fa fa-file\"></i> <span>Sample pages</span> <i class=\"arrow fa fa-chevron-right\"></i></a>\r\n            <ul>\r\n                <li><a href=\"invoice.html\">Invoice</a></li>\r\n                <li><a href=\"chat.html\">Support chat</a></li>\r\n                <li><a href=\"calendar.html\">Calendar</a></li>\r\n                <li><a href=\"gallery.html\">Gallery</a></li>\r\n                <li><a href=\"messages.html\">Messages</a></li>\r\n            </ul>\r\n        </li>\r\n        <li>\r\n            <a href=\"charts.html\"><i class=\"fa fa-signal\"></i> <span>Charts &amp; graphs</span></a>\r\n        </li>\r\n        <li>\r\n            <a href=\"widgets.html\"><i class=\"fa fa-inbox\"></i> <span>Widgets</span></a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n<div id=\"content\">\r\n    <router-outlet></router-outlet>\r\n</div>";
-
-/***/ }),
-
-/***/ 178:
-/***/ (function(module, exports) {
-
-module.exports = "<div id=\"content-header\">\r\n    <h1>Dashboard</h1>\r\n    <div class=\"btn-group\">\r\n        <a class=\"btn btn-large\" title=\"Manage Files\"><i class=\"fa fa-file\"></i></a>\r\n        <a class=\"btn btn-large\" title=\"Manage Users\"><i class=\"fa fa-user\"></i></a>\r\n        <a class=\"btn btn-large\" title=\"Manage Comments\"><i class=\"fa fa-comment\"></i><span class=\"label label-danger\">5</span></a>\r\n        <a class=\"btn btn-large\" title=\"Manage Orders\"><i class=\"fa fa-shopping-cart\"></i></a>\r\n    </div>\r\n</div>\r\n<div id=\"breadcrumb\">\r\n    <a [routerLink]=\"['/dashboard']\"  class=\"current\"><i class=\"fa fa-home\"></i> Dashboard</a>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n       \r\n        <b>{{labelShow}}</b>\r\n\r\n\r\n        <br /><br /><br /><br />\r\n        -->> <a [routerLink]=\"['/money']\" class=\"flip-link to-recover grey\">open money</a>  \r\n        <br />\r\n    </div>\r\n</div>";
-
-/***/ }),
-
-/***/ 179:
-/***/ (function(module, exports) {
-
-module.exports = "<div id=\"content-header\">\r\n    <h1>Not found page</h1>\r\n</div>\r\n<div id=\"breadcrumb\">\r\n    <a [routerLink]=\"['/dashboard']\" class=\"current\"><i class=\"fa fa-home\"></i> Not found page</a>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n\r\n        <h2>404</h2>\r\n\r\n        <br /><br /><br /><br />\r\n        <a [routerLink]=\"['/dashboard']\" >Go to dashboard</a>\r\n        <br />\r\n    </div>\r\n</div>";
-
-/***/ }),
-
-/***/ 180:
-/***/ (function(module, exports) {
-
-module.exports = "<div id=\"content-header\">\r\n    <h1>Money</h1>\r\n</div>\r\n<div id=\"breadcrumb\">\r\n    <a [routerLink]=\"['/money']\" class=\"current\"><i class=\"fa fa-th\"></i> Money</a>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n        <div *ngIf=\"moneys!=null && moneys.length>0\">\r\n            <div class=\"widget-box\">\r\n                <div class=\"widget-content nopadding\">\r\n                    <money-short [moneys]=\"moneys\" (onSelectMoney)=\"onSelectMoney($event)\"></money-short>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
-
-/***/ }),
-
-/***/ 181:
-/***/ (function(module, exports) {
-
-module.exports = "<div id=\"content-header\">\r\n    <h1>Money</h1>\r\n</div>\r\n<div id=\"breadcrumb\">\r\n    <a [routerLink]=\"['/money']\"><i class=\"fa fa-th\"></i> Money</a>\r\n    <a href=\"#\" class=\"current\">{{item.name}}</a>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n      <h1>{{item.name}}</h1>  \r\n\r\n\r\n        <br />\r\n        <a [routerLink]=\"['/money']\" class=\"flip-link to-recover grey\">back</a>\r\n        <br />\r\n    </div>\r\n</div>";
-
-/***/ }),
-
-/***/ 182:
-/***/ (function(module, exports) {
-
-module.exports = "<table class=\"table table-bordered table-striped table-hover\">\r\n    <thead>\r\n        <tr>\r\n            <th>Name</th>\r\n            <th>Symbol</th>\r\n            <th></th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let moneyProp of moneys\">\r\n            <td>{{moneyProp.name}}</td>\r\n            <td>{{moneyProp.shortName}}</td>\r\n            <td>\r\n                \r\n                <a [routerLink]=\"['/money',moneyProp.moneyID]\" ><i class=\"fa fa-pencil\"></i></a>\r\n\r\n\r\n                <a href=\"#\" (click)=\"clickOneMoney(moneyProp.moneyID);$event.preventDefault();\">\r\n        <i class=\"fa fa-eye\"></i>\r\n    </a>\r\n\r\n            </td>\r\n        </tr>\r\n    </tbody>\r\n</table>";
-
-/***/ }),
-
-/***/ 222:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(168);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-
-/***/ 223:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(169);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-
-/***/ 224:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(170);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-
-/***/ 225:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(171);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-
-/***/ 231:
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(35);
-__webpack_require__(36);
-module.exports = __webpack_require__(94);
-
-
-/***/ }),
-
-/***/ 66:
+/***/ 113:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -558,6 +381,284 @@ MoneyService = __decorate([
 
 /***/ }),
 
+/***/ 169:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(11)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 170:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(11)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 171:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(11)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 172:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(11)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "a i.fa {\n  color: black;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 173:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(11)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 179:
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"header\">\r\n    <h1><a href=\"/index.html\">Unicorn Admin</a></h1>\r\n    <a id=\"menu-trigger\" href=\"#\"><i class=\"fa fa-align-justify\"></i></a>\r\n</div>\r\n<div id=\"user-nav\">\r\n    <ul class=\"btn-group\">\r\n        <li class=\"btn\"><a title=\"\" href=\"#\"><i class=\"fa fa-user\"></i> <span class=\"text\">Profile</span></a></li>\r\n        <li class=\"btn dropdown\" id=\"menu-messages\">\r\n            <a href=\"#\" data-toggle=\"dropdown\" data-target=\"#menu-messages\" class=\"dropdown-toggle\"><i class=\"fa fa-envelope\"></i> <span class=\"text\">Messages</span> <span class=\"label label-danger\">5</span> <b class=\"caret\"></b></a>\r\n        </li>\r\n        <li class=\"btn\"><a title=\"\" href=\"#\"><i class=\"fa fa-cog\"></i> <span class=\"text\">Settings</span></a></li>\r\n        <li class=\"btn\"><a title=\"\" href=\"/Home/Logout\"><i class=\"fa fa-share\"></i> <span class=\"text\">Logout</span></a></li>\r\n    </ul>\r\n</div>\r\n<div id=\"sidebar\">\r\n    <div id=\"search\">\r\n        <input type=\"text\" placeholder=\"Search here...\" /><button type=\"submit\" class=\"tip-right\" title=\"Search\"><i class=\"fa fa-search\"></i></button>\r\n    </div>\r\n    <ul>\r\n        <li [ngClass]=\"{'active':linkDashboard}\"><a [routerLink]=\"['/dashboard']\" ><i class=\"fa fa-home\"></i> <span>Dashboard</span></a></li>\r\n        <li [ngClass]=\"{'active':linkMoney}\"><a [routerLink]=\"['/moneys']\" ><i class=\"fa fa-th\"></i> <span>Money</span></a></li>\r\n\r\n        <li class=\"submenu\">\r\n            <a href=\"#\"><i class=\"fa fa-flask\"></i> <span>UI Lab</span> <i class=\"arrow fa fa-chevron-right\"></i></a>\r\n            <ul>\r\n                <li><a href=\"interface.html\">Interface Elements</a></li>\r\n                <li><a href=\"jquery-ui.html\">jQuery UI</a></li>\r\n                <li><a href=\"buttons.html\">Buttons &amp; icons</a></li>\r\n            </ul>\r\n        </li>\r\n        <li class=\"submenu\">\r\n            <a href=\"#\"><i class=\"fa fa-th-list\"></i> <span>Form elements</span> <i class=\"arrow fa fa-chevron-right\"></i></a>\r\n            <ul>\r\n                <li><a href=\"form-common.html\">Common elements</a></li>\r\n                <li><a href=\"form-validation.html\">Validation</a></li>\r\n                <li><a href=\"form-wizard.html\">Wizard</a></li>\r\n            </ul>\r\n        </li>\r\n        \r\n        <li><a href=\"grid.html\"><i class=\"fa fa-th-list\"></i> <span>Grid Layout</span></a></li>\r\n        <li class=\"submenu\">\r\n            <a href=\"#\"><i class=\"fa fa-file\"></i> <span>Sample pages</span> <i class=\"arrow fa fa-chevron-right\"></i></a>\r\n            <ul>\r\n                <li><a href=\"invoice.html\">Invoice</a></li>\r\n                <li><a href=\"chat.html\">Support chat</a></li>\r\n                <li><a href=\"calendar.html\">Calendar</a></li>\r\n                <li><a href=\"gallery.html\">Gallery</a></li>\r\n                <li><a href=\"messages.html\">Messages</a></li>\r\n            </ul>\r\n        </li>\r\n        <li>\r\n            <a href=\"charts.html\"><i class=\"fa fa-signal\"></i> <span>Charts &amp; graphs</span></a>\r\n        </li>\r\n        <li>\r\n            <a href=\"widgets.html\"><i class=\"fa fa-inbox\"></i> <span>Widgets</span></a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n<div id=\"content\">\r\n    <router-outlet></router-outlet>\r\n</div>";
+
+/***/ }),
+
+/***/ 180:
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"content-header\">\r\n    <h1>Dashboard</h1>\r\n    <div class=\"btn-group\">\r\n        <a class=\"btn btn-large\" title=\"Manage Files\"><i class=\"fa fa-file\"></i></a>\r\n        <a class=\"btn btn-large\" title=\"Manage Users\"><i class=\"fa fa-user\"></i></a>\r\n        <a class=\"btn btn-large\" title=\"Manage Comments\"><i class=\"fa fa-comment\"></i><span class=\"label label-danger\">5</span></a>\r\n        <a class=\"btn btn-large\" title=\"Manage Orders\"><i class=\"fa fa-shopping-cart\"></i></a>\r\n    </div>\r\n</div>\r\n<div id=\"breadcrumb\">\r\n    <a [routerLink]=\"['/dashboard']\"  class=\"current\"><i class=\"fa fa-home\"></i> Dashboard</a>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n       \r\n        <b>{{labelShow}}</b>\r\n\r\n\r\n        <br /><br /><br /><br />\r\n        -->> <a [routerLink]=\"['/moneys']\" class=\"flip-link to-recover grey\">open money</a>  \r\n        <br />\r\n    </div>\r\n</div>";
+
+/***/ }),
+
+/***/ 181:
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"content-header\">\r\n    <h1>Not found page</h1>\r\n</div>\r\n<div id=\"breadcrumb\">\r\n    <a [routerLink]=\"['/dashboard']\" class=\"current\"><i class=\"fa fa-home\"></i> Not found page</a>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n\r\n        <h2>404</h2>\r\n\r\n        <br /><br />\r\n        Sorry, page <b>{{urlFrom}}</b> not found\r\n        <br /><br />\r\n        <a [routerLink]=\"['/dashboard']\" >Go to dashboard</a>\r\n        <br />\r\n    </div>\r\n</div>";
+
+/***/ }),
+
+/***/ 182:
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"content-header\">\r\n    <h1>Money</h1>\r\n</div>\r\n<div id=\"breadcrumb\">\r\n    <a [routerLink]=\"['/money']\"><i class=\"fa fa-th\"></i> Money</a>\r\n    <a href=\"#\" class=\"current\">{{item.name}}</a>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n      <h1>{{item.name}}</h1>  \r\n\r\n\r\n        <br />\r\n        <a [routerLink]=\"['/moneys']\" class=\"flip-link to-recover grey\">back</a>\r\n        <br />\r\n    </div>\r\n</div>";
+
+/***/ }),
+
+/***/ 183:
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"content-header\">\r\n    <h1>Money</h1>\r\n</div>\r\n<div id=\"breadcrumb\">\r\n    <a [routerLink]=\"['/money']\" class=\"current\"><i class=\"fa fa-th\"></i> Money</a>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n        <div *ngIf=\"moneys!=null && moneys.length>0\">\r\n            <div class=\"widget-box\">\r\n                <div class=\"widget-content nopadding\">\r\n                    <money-short [moneys]=\"moneys\" (onSelectMoney)=\"onSelectMoney($event)\"></money-short>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ }),
+
+/***/ 184:
+/***/ (function(module, exports) {
+
+module.exports = "<table class=\"table table-bordered table-striped table-hover\">\r\n    <thead>\r\n        <tr>\r\n            <th>Name</th>\r\n            <th>Symbol</th>\r\n            <th></th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let moneyProp of moneys\">\r\n            <td>{{moneyProp.name}}</td>\r\n            <td>{{moneyProp.shortName}}</td>\r\n            <td>\r\n                \r\n                <a [routerLink]=\"['/moneys',moneyProp.moneyID]\" ><i class=\"fa fa-pencil\"></i></a>\r\n\r\n\r\n                <a href=\"#\" (click)=\"clickOneMoney(moneyProp.moneyID);$event.preventDefault();\">\r\n        <i class=\"fa fa-eye\"></i>\r\n    </a>\r\n\r\n            </td>\r\n        </tr>\r\n    </tbody>\r\n</table>";
+
+/***/ }),
+
+/***/ 185:
+/***/ (function(module, exports) {
+
+module.exports = "<router-outlet></router-outlet>";
+
+/***/ }),
+
+/***/ 225:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(169);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+
+/***/ 226:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(170);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+
+/***/ 227:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(171);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+
+/***/ 228:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(172);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+
+/***/ 229:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(173);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+
+/***/ 235:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(35);
+__webpack_require__(36);
+module.exports = __webpack_require__(94);
+
+
+/***/ }),
+
+/***/ 237:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class Money {
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Money;
+
+
+
+/***/ }),
+
+/***/ 65:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MoneyDataComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_money__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_money_service__ = __webpack_require__(113);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+let MoneyDataComponent = class MoneyDataComponent {
+    constructor(moneyService, router, activatedRoute) {
+        this.moneyService = moneyService;
+        this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.item = new __WEBPACK_IMPORTED_MODULE_1__model_money__["a" /* Money */]();
+        this.activatedRoute.params.subscribe((param) => {
+            this.moneyId = param['id'];
+        });
+    }
+    ngAfterViewInit() {
+        this.getMoney();
+    }
+    getMoney() {
+        this.moneyService
+            .getMoney(this.moneyId)
+            .then(row => {
+            this.item = row;
+        });
+    }
+};
+MoneyDataComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+        selector: 'moneyData',
+        template: __webpack_require__(182),
+        styles: [__webpack_require__(227)],
+        providers: [__WEBPACK_IMPORTED_MODULE_3__service_money_service__["a" /* MoneyService */]]
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__service_money_service__["a" /* MoneyService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* ActivatedRoute */]])
+], MoneyDataComponent);
+
+
+
+/***/ }),
+
 /***/ 94:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -592,16 +693,20 @@ main();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_components_app_main_component__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_components_dashboard_dashboard_component__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_components_money_money_component__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_components_money_moneyShort_component__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_components_money_moneyData_component__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_components_dashboard_notFound_component__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_components_money_list_moneyShort_component__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_components_money_data_moneyData_component__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_components_dashboard_notFound_component__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_components_money_moneys_component__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_components_money_money_routes__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_components_money_list_moneyList_component__ = __webpack_require__(105);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -629,7 +734,7 @@ AppModuleMain = __decorate([
             __WEBPACK_IMPORTED_MODULE_6__app_components_app_main_component__["a" /* MainComponent */]
         ],
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_6__app_components_app_main_component__["a" /* MainComponent */], __WEBPACK_IMPORTED_MODULE_7__app_components_dashboard_dashboard_component__["a" /* DashboardComponent */], __WEBPACK_IMPORTED_MODULE_8__app_components_money_money_component__["a" /* MoneyComponent */], __WEBPACK_IMPORTED_MODULE_9__app_components_money_moneyShort_component__["a" /* MoneyShortComponent */], __WEBPACK_IMPORTED_MODULE_10__app_components_money_moneyData_component__["a" /* MoneyDataComponent */], __WEBPACK_IMPORTED_MODULE_11__app_components_dashboard_notFound_component__["a" /* NotFoundComponent */]
+            __WEBPACK_IMPORTED_MODULE_6__app_components_app_main_component__["a" /* MainComponent */], __WEBPACK_IMPORTED_MODULE_7__app_components_dashboard_dashboard_component__["a" /* DashboardComponent */], __WEBPACK_IMPORTED_MODULE_8__app_components_money_list_moneyShort_component__["a" /* MoneyShortComponent */], __WEBPACK_IMPORTED_MODULE_9__app_components_money_data_moneyData_component__["a" /* MoneyDataComponent */], __WEBPACK_IMPORTED_MODULE_10__app_components_dashboard_notFound_component__["a" /* NotFoundComponent */], __WEBPACK_IMPORTED_MODULE_11__app_components_money_moneys_component__["a" /* MoneysComponent */], __WEBPACK_IMPORTED_MODULE_13__app_components_money_list_moneyList_component__["a" /* MoneyListComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["a" /* BrowserModule */],
@@ -639,10 +744,9 @@ AppModuleMain = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot([
                 { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
                 { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_7__app_components_dashboard_dashboard_component__["a" /* DashboardComponent */] },
-                { path: 'money', component: __WEBPACK_IMPORTED_MODULE_8__app_components_money_money_component__["a" /* MoneyComponent */] },
-                { path: 'money/:id', component: __WEBPACK_IMPORTED_MODULE_10__app_components_money_moneyData_component__["a" /* MoneyDataComponent */] },
-                //{ path: '**', redirectTo: 'dashboard' }
-                { path: '**', component: __WEBPACK_IMPORTED_MODULE_11__app_components_dashboard_notFound_component__["a" /* NotFoundComponent */] }
+                { path: 'moneys', component: __WEBPACK_IMPORTED_MODULE_11__app_components_money_moneys_component__["a" /* MoneysComponent */], children: __WEBPACK_IMPORTED_MODULE_12__app_components_money_money_routes__["a" /* MONEY_CHILD_ROUTES */] },
+                { path: '404', component: __WEBPACK_IMPORTED_MODULE_10__app_components_dashboard_notFound_component__["a" /* NotFoundComponent */] },
+                { path: '**', redirectTo: '/404' }
             ])
         ],
         exports: [__WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */]],
@@ -654,5 +758,5 @@ AppModuleMain = __decorate([
 
 /***/ })
 
-},[231]);
+},[235]);
 //# sourceMappingURL=main.js.map

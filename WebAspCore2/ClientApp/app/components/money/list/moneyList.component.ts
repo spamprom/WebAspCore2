@@ -1,16 +1,15 @@
 ﻿import { Component, AfterViewInit } from '@angular/core';
-import { Money } from "../../model/money";
-import { MoneyService } from '../../service/money.service';
+import { Money } from "../../../model/money";
+import { MoneyService } from '../../../service/money.service';
 import { Router } from "@angular/router";
 
 @Component({
-    selector: 'money-one',
-    templateUrl: './money.component.html',
+    selector: 'money-list',
+    templateUrl: './moneyList.component.html',
     providers: [MoneyService]
 })
-export class MoneyComponent implements AfterViewInit {
+export class MoneyListComponent implements AfterViewInit {
     moneys: Money[];
-    selectedMoney: Money;
 
     constructor(private moneyService: MoneyService, private router: Router) { }
 
