@@ -1,6 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Router, NavigationEnd } from "@angular/router";
 import { Title } from '@angular/platform-browser';
+import { NavigatMenu } from "../shared/model/navigatMenu";
 
 @Component({
     selector: 'app-component',
@@ -29,6 +30,11 @@ export class AppComponent implements AfterViewInit {
     menuActived(url: string): void {
         this.linkDashboard = false;
         this.linkMoney = false;
+        this.linkPerson = false;
+
+        this.linksFirst.activeClass = false;
+        this.linksSecond.activeClass = false;
+
         if (url != null) {
             if (url.indexOf('/dashboard') != -1) {
                 this.linkDashboard = true;
@@ -38,8 +44,12 @@ export class AppComponent implements AfterViewInit {
                 this.linkMoney = true;
                 this.titleService.setTitle('Money' + this.prefixTitle);
             }
+            if (url.indexOf('/persons') != -1) {
+                this.linkPerson = true;
+                this.titleService.setTitle('Person' + this.prefixTitle);
+            }
             if (url.indexOf('/404') != -1) {
-                this.linkMoney = true;
+                this.linkDashboard = true;
                 this.titleService.setTitle('404' + this.prefixTitle);
             }
         }
@@ -48,5 +58,15 @@ export class AppComponent implements AfterViewInit {
     //menu
     linkDashboard: boolean = true;
     linkMoney: boolean = false;
+    linkPerson: boolean = false;
+
+    linksFirst: NavigatMenu = new NavigatMenu();
+    linksSecond: NavigatMenu = new NavigatMenu();
     //menu
+
+
+    menuOpen(link: NavigatMenu): void {
+        link.openClass = !link.openClass;
+    }
+
 }

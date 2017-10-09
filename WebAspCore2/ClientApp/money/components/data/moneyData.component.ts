@@ -8,8 +8,7 @@ import { Money } from "../../model/money";
 @Component({
     selector: 'moneyData',
     templateUrl: 'moneyData.component.html',
-    styleUrls: ['moneyData.component.scss'],
-    providers: [MoneyService]
+    styleUrls: ['moneyData.component.scss']
 })
 export class MoneyDataComponent implements AfterViewInit  {
     item: Money = new Money();

@@ -5846,3 +5846,6 @@ body[data-color="purple"].flat .ui-dialog .ui-dialog-titlebar {
     border-right: 0;
   }
 }
+[hidden] {
+    display: none !important;
+}

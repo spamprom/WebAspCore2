@@ -5,8 +5,7 @@ import { Money } from "../../model/money";
 
 @Component({
     selector: 'money-list',
-    templateUrl: './moneyList.component.html',
-    providers: [MoneyService]
+    templateUrl: './moneyList.component.html'
 })
 export class MoneyListComponent implements AfterViewInit {
     moneys: Money[];

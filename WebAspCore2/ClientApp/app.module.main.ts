@@ -9,7 +9,8 @@ import { BrowserModule} from '@angular/platform-browser';
 import { DashboardComponent } from "./shared/components/dashboard/dashboard.component";
 import { NotFoundComponent } from "./shared/components/notFound/notFound.component";
 import { AppComponent } from "./main_component/app.component";
-import { UserModule } from "./money/money.module";
+import { MoneyModule } from "./money/money.module";
+import { PersonModule } from "./person/person.module";
 
 @NgModule({
     bootstrap: [
@@ -23,7 +24,8 @@ import { UserModule } from "./money/money.module";
         CommonModule,
         HttpModule,
         FormsModule,
-        UserModule,
+        MoneyModule,
+        PersonModule,
         RouterModule.forRoot([
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
             { path: 'dashboard', component: DashboardComponent },
