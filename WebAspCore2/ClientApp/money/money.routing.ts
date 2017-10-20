@@ -6,7 +6,7 @@ import { AppComponent } from "./components/main_component/app.component";
 
 const MONEY_CHILD_ROUTES: Routes = [
     {
-        path: 'moneys', component: AppComponent, children: [
+        path: '', component: AppComponent, children: [
                 { path: '', component: MoneyListComponent },
                 { path: ':id', component: MoneyDataComponent }
         ]

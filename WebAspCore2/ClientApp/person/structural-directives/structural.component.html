@@ -1,0 +1,7 @@
+﻿<h2>ddd</h2>
+<input [(ngModel)]="checkBoxValue" type="checkbox" name="select" id="check" />
+<label for="check">ccccc</label>
+<h5 *ngIf="checkBoxValue; else myLinkName">Hi, I can disapper</h5>
+<ng-template #myLinkName>
+    AAAAAAAAAA
+</ng-template>

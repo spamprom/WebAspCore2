@@ -6,7 +6,6 @@ import { enableProdMode } from "@angular/core";
 declare const Reflect: any;
 
 export function main() {
-    return platformBrowserDynamic()
-        .bootstrapModule(AppModuleMain)
+    return platformBrowserDynamic().bootstrapModule(AppModuleMain)
 }
 main();

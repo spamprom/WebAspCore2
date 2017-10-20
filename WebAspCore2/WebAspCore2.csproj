@@ -27,10 +27,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app.routing.ts" />
     <None Remove="ClientApp\auth\service\auth.service.ts" />
     <None Remove="ClientApp\auth\service\money.service.ts" />
+    <None Remove="ClientApp\core\core.module.ts" />
+    <None Remove="ClientApp\core\main_component\app.component.ts" />
     <None Remove="ClientApp\ng-main.ts" />
     <None Remove="ClientApp\ng-polyfills.ts" />
+    <None Remove="ClientApp\person\directives\custom.diretive.ts" />
     <None Remove="ClientApp\person\person.module.ts" />
     <None Remove="ClientApp\person\person.routing.ts" />
     <None Remove="ClientApp\person\service\person.service.ts" />
@@ -46,7 +50,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app.routing.ts" />
     <TypeScriptCompile Include="ClientApp\auth\app.module.user.ts" />
+    <TypeScriptCompile Include="ClientApp\core\core.module.ts" />
+    <TypeScriptCompile Include="ClientApp\core\main_component\app.component.ts" />
     <TypeScriptCompile Include="ClientApp\money\components\list\moneyList.component.ts" />
     <TypeScriptCompile Include="ClientApp\money\money.module.ts" />
     <TypeScriptCompile Include="ClientApp\money\money.routing.ts" />
@@ -62,6 +69,7 @@
     <TypeScriptCompile Include="ClientApp\ng-main.ts" />
     <TypeScriptCompile Include="ClientApp\auth\ng-main.ts" />
     <TypeScriptCompile Include="ClientApp\ng-polyfills.ts" />
+    <TypeScriptCompile Include="ClientApp\person\directives\custom.diretive.ts" />
     <TypeScriptCompile Include="ClientApp\person\person.module.ts" />
     <TypeScriptCompile Include="ClientApp\person\person.routing.ts" />
     <TypeScriptCompile Include="ClientApp\person\service\person.service.ts" />

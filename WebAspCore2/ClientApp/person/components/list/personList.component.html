@@ -6,6 +6,33 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        persons list
+        
+
+        <h2>h2   sdfsdfdsf</h2>
+        <h4 [ngClass]="isTextValid() ? 'green-text' : 'red-text'">h4</h4>
+        <input [(ngModel)]="attrInput" />
+
+
+        <hr />
+
+        <h4 [ngStyle]="currentStyles">ng style</h4>
+        <input (input)="onAttrStyleChange()" [(ngModel)]="attrStyle" />
+
+        <hr />
+
+        <input  [appCustomerInput]="inputColorPicker"  value=""/>
+
+        <select [(ngModel)]="inputColorPicker">
+            <option value="green">green</option>
+            <option value="yellow">yellow</option>
+            <option value="black">black</option>
+        </select>
+
+
+        <hr />
+        <br />
+        <app-structural></app-structural>
+        <br />
+        <hr />
     </div>
 </div>

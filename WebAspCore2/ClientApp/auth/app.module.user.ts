@@ -38,12 +38,4 @@ import { RegisterComponent } from "./components/register/register.component";
     ]
 })
 export class AppModuleUser {
-    public isWork(): void {
-        //require.ensure([], function (req) {
-        //    let objReq = req('./myScript');
-
-        //    objReq.dfdfdf();
-        //    objReq();
-        //}, 'jsServerName');
-    }
 }

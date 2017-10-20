@@ -13,6 +13,7 @@ namespace WebAspCore2.Data.Models
         public decimal Value { get; set; }
         public ExchangeRateTypeEnum ExchangeRateType { get; set; }
         public Money Money { get; set; }
+        //[Column(TypeName = "datetime")]
         public DateTime Day { get; set; }
     }
 

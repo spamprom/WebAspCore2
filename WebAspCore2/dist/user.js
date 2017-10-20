@@ -1,43 +1,22 @@
 var user =
-webpackJsonp_name_([1],{
+webpackJsonp_name_([2],{
 
-/***/ 100:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (immutable) */ __webpack_exports__["main"] = main;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ng_polyfills__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_module_user__ = __webpack_require__(106);
-
-
-
-function main() {
-    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])()
-        .bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_module_user__["a" /* AppModuleUser */]);
-}
-main();
-
-
-/***/ }),
-
-/***/ 106:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModuleUser; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__service_auth_service__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_main_component_app_component__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_login_login_component__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_recover_recover_component__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_register_register_component__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__service_auth_service__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_main_component_app_component__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_login_login_component__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_recover_recover_component__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_register_register_component__ = __webpack_require__(108);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,13 +35,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 let AppModuleUser = class AppModuleUser {
-    isWork() {
-        //require.ensure([], function (req) {
-        //    let objReq = req('./myScript');
-        //    objReq.dfdfdf();
-        //    objReq();
-        //}, 'jsServerName');
-    }
 };
 AppModuleUser = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
@@ -92,19 +64,19 @@ AppModuleUser = __decorate([
     })
 ], AppModuleUser);
 
-
+//# sourceMappingURL=app.module.user.js.map
 
 /***/ }),
 
-/***/ 107:
+/***/ 105:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_Login__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_auth_service__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_Login__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_auth_service__ = __webpack_require__(66);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -154,19 +126,20 @@ let LoginComponent = class LoginComponent {
     }
 };
 LoginComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* Component */])({
         selector: 'app-login',
-        template: __webpack_require__(190),
-        styles: [__webpack_require__(239)]
+        template: __webpack_require__(185),
+        styles: [__webpack_require__(233)]
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_3__service_auth_service__["a" /* AuthService */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__service_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_auth_service__["a" /* AuthService */]) === "function" && _b || Object])
 ], LoginComponent);
 
-
+var _a, _b;
+//# sourceMappingURL=login.component.js.map
 
 /***/ }),
 
-/***/ 108:
+/***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -182,18 +155,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 let AppComponent = class AppComponent {
 };
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* Component */])({
         selector: 'app-component',
-        template: __webpack_require__(191),
-        styles: [__webpack_require__(240)]
+        template: __webpack_require__(186),
+        styles: [__webpack_require__(234)]
     })
 ], AppComponent);
 
-
+//# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-/***/ 109:
+/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -209,18 +182,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 let RecoverComponent = class RecoverComponent {
 };
 RecoverComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* Component */])({
         selector: 'recover',
-        template: __webpack_require__(192),
-        styles: [__webpack_require__(237)]
+        template: __webpack_require__(187),
+        styles: [__webpack_require__(230)]
     })
 ], RecoverComponent);
 
-
+//# sourceMappingURL=recover.component.js.map
 
 /***/ }),
 
-/***/ 110:
+/***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -236,18 +209,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 let RegisterComponent = class RegisterComponent {
 };
 RegisterComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* Component */])({
         selector: 'app-register',
-        template: __webpack_require__(193),
-        styles: [__webpack_require__(238)]
+        template: __webpack_require__(188),
+        styles: [__webpack_require__(231)]
     })
 ], RegisterComponent);
 
-
+//# sourceMappingURL=register.component.js.map
 
 /***/ }),
 
-/***/ 111:
+/***/ 109:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -255,6 +228,36 @@ class Login {
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Login;
 
+//# sourceMappingURL=Login.js.map
+
+/***/ }),
+
+/***/ 172:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 173:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
 
 
 /***/ }),
@@ -262,7 +265,7 @@ class Login {
 /***/ 175:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)(undefined);
+exports = module.exports = __webpack_require__(7)(undefined);
 // imports
 
 
@@ -277,7 +280,7 @@ exports.push([module.i, "", ""]);
 /***/ 176:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)(undefined);
+exports = module.exports = __webpack_require__(7)(undefined);
 // imports
 
 
@@ -289,65 +292,65 @@ exports.push([module.i, "", ""]);
 
 /***/ }),
 
-/***/ 177:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(6)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 178:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(6)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 190:
+/***/ 185:
 /***/ (function(module, exports) {
 
 module.exports = "<div id=\"loginform\" >\r\n    <p>Enter username and password to continue.</p>\r\n    <div class=\"input-group input-sm\" [ngClass]=\"{'has-error':hasError}\">\r\n        <span class=\"input-group-addon\"><i class=\"fa fa-user\"></i></span><input class=\"form-control\" type=\"text\" id=\"username\"  [(ngModel)]=\"login.userName\" placeholder=\"Username\" />\r\n    </div>\r\n    <div class=\"input-group\" [ngClass]=\"{'has-error':hasError}\">\r\n        <span class=\"input-group-addon\"><i class=\"fa fa-lock\"></i></span><input class=\"form-control\" type=\"password\" id=\"password\"  [(ngModel)]=\"login.password\" placeholder=\"Password\" />\r\n    </div>\r\n    <div class=\"form-actions clearfix\">\r\n        <div class=\"pull-left\">\r\n            <a [routerLink]=\"['/User', 'Register']\" class=\"flip-link to-register blue\" >Create new account</a>\r\n        </div>\r\n        <div class=\"pull-right\">\r\n            <a [routerLink]=\"['/User', 'Recover']\" class=\"flip-link to-recover grey\" >Lost password?</a>\r\n        </div>\r\n        <input type=\"submit\" (click)=\"onLogin()\"  *ngIf=\"!startLogin\" class=\"btn btn-block btn-primary btn-default\" value=\"Login\" />\r\n    </div>\r\n</div>\r\n    \r\n";
 
 /***/ }),
 
-/***/ 191:
+/***/ 186:
 /***/ (function(module, exports) {
 
 module.exports = "<router-outlet></router-outlet>\r\n";
 
 /***/ }),
 
-/***/ 192:
+/***/ 187:
 /***/ (function(module, exports) {
 
 module.exports = "<form id=\"recoverform\" action=\"#\">\r\n    <p>Enter your e-mail address below and we will send you instructions how to recover a password.</p>\r\n    <div class=\"input-group\">\r\n        <span class=\"input-group-addon\"><i class=\"fa fa-envelope\"></i></span><input class=\"form-control\" type=\"text\" placeholder=\"E-mail address\" />\r\n    </div>\r\n    <div class=\"form-actions clearfix\">\r\n        <div class=\"pull-left\">\r\n            <a [routerLink]=\"['/User','Login']\"  class=\"grey flip-link to-login\">Click to login</a>\r\n        </div>\r\n        <div class=\"pull-right\">\r\n            <a [routerLink]=\"['/User','Register']\" class=\"blue flip-link to-register\">Create new account</a>\r\n        </div>\r\n        <input type=\"submit\" class=\"btn btn-block btn-inverse\" value=\"Recover\" />\r\n    </div>\r\n</form>";
 
 /***/ }),
 
-/***/ 193:
+/***/ 188:
 /***/ (function(module, exports) {
 
 module.exports = "<form id=\"registerform\" action=\"#\">\r\n    <p>Enter information required to register:</p>\r\n    <div class=\"input-group\">\r\n        <span class=\"input-group-addon\"><i class=\"fa fa-user\"></i></span><input class=\"form-control\" type=\"text\" placeholder=\"Enter Username\" />\r\n    </div>\r\n    <div class=\"input-group\">\r\n        <span class=\"input-group-addon\"><i class=\"fa fa-lock\"></i></span><input class=\"form-control\" type=\"password\" placeholder=\"Choose Password\" />\r\n    </div>\r\n    <div class=\"input-group\">\r\n        <span class=\"input-group-addon\"><i class=\"fa fa-lock\"></i></span><input class=\"form-control\" type=\"password\" placeholder=\"Confirm password\" />\r\n    </div>\r\n    <div class=\"input-group\">\r\n        <span class=\"input-group-addon\"><i class=\"fa fa-envelope\"></i></span><input class=\"form-control\" type=\"text\" placeholder=\"Enter E-mail address\" />\r\n    </div>\r\n    <div class=\"form-actions clearfix\">\r\n        <div class=\"pull-left\">\r\n            <a [routerLink]=\"['/User','Login']\"  class=\"grey flip-link to-login\">Click to login</a>\r\n        </div>\r\n        <div class=\"pull-right\">\r\n            <a [routerLink]=\"['/User','Recover']\" class=\"grey flip-link to-recover\">Lost password?</a>\r\n        </div>\r\n        <input type=\"submit\" class=\"btn btn-block btn-success\" value=\"Register\" />\r\n    </div>\r\n</form>";
 
 /***/ }),
 
-/***/ 237:
+/***/ 230:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(172);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+
+/***/ 231:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(173);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -362,7 +365,7 @@ module.exports = "<form id=\"registerform\" action=\"#\">\r\n    <p>Enter inform
 
 /***/ }),
 
-/***/ 238:
+/***/ 234:
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -377,55 +380,25 @@ module.exports = "<form id=\"registerform\" action=\"#\">\r\n    <p>Enter inform
 
 /***/ }),
 
-/***/ 239:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(177);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-
-/***/ 240:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(178);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-
-/***/ 253:
+/***/ 244:
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(35);
 __webpack_require__(36);
-module.exports = __webpack_require__(100);
+module.exports = __webpack_require__(99);
 
 
 /***/ }),
 
-/***/ 67:
+/***/ 66:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -472,12 +445,34 @@ let AuthService = class AuthService {
 };
 AuthService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], AuthService);
 
+var _a, _b;
+//# sourceMappingURL=auth.service.js.map
 
+/***/ }),
+
+/***/ 99:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (immutable) */ __webpack_exports__["main"] = main;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ng_polyfills__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_module_user__ = __webpack_require__(104);
+
+
+
+function main() {
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])()
+        .bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_module_user__["a" /* AppModuleUser */]);
+}
+main();
+//# sourceMappingURL=ng-main.js.map
 
 /***/ })
 
-},[253]);
+},[244]);
 //# sourceMappingURL=user.js.map
