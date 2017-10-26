@@ -2,6 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import { Router, NavigationEnd } from "@angular/router";
 import { Title } from '@angular/platform-browser';
 import { NavigatMenu } from "../shared/model/navigatMenu";
+declare var $: any;
 
 @Component({
     selector: 'app-component',
@@ -65,8 +66,13 @@ export class AppComponent implements AfterViewInit {
     //menu
 
 
-    menuOpen(link: NavigatMenu): void {
+    menuOpen(link: NavigatMenu, event: any): void {
         link.openClass = !link.openClass;
+        if (link.openClass) {
+            $(event.toElement).parents("li:first").find("ul").slideDown();
+        } else {
+            $(event.toElement).parents("li:first").find("ul").slideUp();
+        }
     }
 
 }

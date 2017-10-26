@@ -239,8 +239,14 @@ let AppComponent = class AppComponent {
         }
     }
     //menu
-    menuOpen(link) {
+    menuOpen(link, event) {
         link.openClass = !link.openClass;
+        if (link.openClass) {
+            $(event.toElement).parents("li:first").find("ul").slideDown();
+        }
+        else {
+            $(event.toElement).parents("li:first").find("ul").slideUp();
+        }
     }
 };
 AppComponent = __decorate([
@@ -277,11 +283,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 //var jQurr = $;
+//declare var $: any;
 let CustomerDirective = class CustomerDirective {
     constructor(el) {
         this.borderColor = 'black';
         this.opacity = 1;
-        //$(el)
+        //alert($(el).length);
         //el.nativeElement.style.backgroundColor = 'yellow';
     }
     ngOnChanges() {
@@ -624,7 +631,7 @@ module.exports = "<router-outlet></router-outlet>";
 /***/ 190:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"header\">\r\n    <h1><a href=\"/index.html\">Unicorn Admin</a></h1>\r\n    <a id=\"menu-trigger\" href=\"#\"><i class=\"fa fa-align-justify\"></i></a>\r\n</div>\r\n<div id=\"user-nav\">\r\n    <ul class=\"btn-group\">\r\n        <li class=\"btn\"><a title=\"\" href=\"#\"><i class=\"fa fa-user\"></i> <span class=\"text\">Profile</span></a></li>\r\n        <li class=\"btn dropdown\" id=\"menu-messages\">\r\n            <a href=\"#\" data-toggle=\"dropdown\" data-target=\"#menu-messages\" class=\"dropdown-toggle\"><i class=\"fa fa-envelope\"></i> <span class=\"text\">Messages</span> <span class=\"label label-danger\">5</span> <b class=\"caret\"></b></a>\r\n        </li>\r\n        <li class=\"btn\"><a title=\"\" href=\"#\"><i class=\"fa fa-cog\"></i> <span class=\"text\">Settings</span></a></li>\r\n        <li class=\"btn\"><a title=\"\" href=\"/Home/Logout\"><i class=\"fa fa-share\"></i> <span class=\"text\">Logout</span></a></li>\r\n    </ul>\r\n</div>\r\n<div id=\"sidebar\">\r\n    <div id=\"search\">\r\n        <input type=\"text\" placeholder=\"Search here...\" /><button type=\"submit\" class=\"tip-right\" title=\"Search\"><i class=\"fa fa-search\"></i></button>\r\n    </div>\r\n    <ul>\r\n        <li [ngClass]=\"{'active':linkDashboard}\"><a [routerLink]=\"['/dashboard']\" ><i class=\"fa fa-home\"></i> <span>Dashboard</span></a></li>\r\n        <li [ngClass]=\"{'active':linkMoney}\"><a [routerLink]=\"['/moneys']\" ><i class=\"fa fa-th\"></i> <span>Money</span></a></li>\r\n        <li [ngClass]=\"{'active':linkPerson}\"><a [routerLink]=\"['/persons']\"><i class=\"fa fa-group\"></i> <span>Persons</span></a></li>\r\n\r\n        <li class=\"submenu\" [ngClass]=\"{'open':linksFirst.openClass}\">\r\n            <a href=\"#\" (click)=\"menuOpen(linksFirst);$event.preventDefault();\"><i class=\"fa fa-flask\"></i> <span>UI Lab</span> <i class=\"arrow fa fa-chevron-right\"></i></a>\r\n            <ul [hidden]=\"!linksFirst.openClass\">\r\n                <li><a href=\"#\">Interface Elements</a></li>\r\n                <li><a href=\"#\">jQuery UI</a></li>\r\n                <li><a href=\"#\">Buttons &amp; icons</a></li>\r\n            </ul>\r\n        </li>\r\n        <li class=\"submenu\" [ngClass]=\"{'open':linksSecond.openClass}\">\r\n            <a href=\"#\" (click)=\"menuOpen(linksSecond);$event.preventDefault();\"><i class=\"fa fa-th-list\"></i> <span>Form elements</span> <i class=\"arrow fa fa-chevron-right\"></i></a>\r\n            <ul [hidden]=\"!linksSecond.openClass\">\r\n                <li><a href=\"#\">Common elements</a></li>\r\n                <li><a href=\"#\">Validation</a></li>\r\n                <li><a href=\"#\">Wizard</a></li>\r\n            </ul>\r\n        </li>\r\n        \r\n        <li><a href=\"#\"><i class=\"fa fa-th-list\"></i> <span>Grid Layout</span></a></li>\r\n    </ul>\r\n</div>\r\n<div id=\"content\">\r\n    <router-outlet></router-outlet>\r\n</div>";
+module.exports = "<div id=\"header\">\r\n    <h1><a href=\"/index.html\">Unicorn Admin</a></h1>\r\n    <a id=\"menu-trigger\" href=\"#\"><i class=\"fa fa-align-justify\"></i></a>\r\n</div>\r\n<div id=\"user-nav\">\r\n    <ul class=\"btn-group\">\r\n        <li class=\"btn\"><a title=\"\" href=\"#\"><i class=\"fa fa-user\"></i> <span class=\"text\">Profile</span></a></li>\r\n        <li class=\"btn dropdown\" id=\"menu-messages\">\r\n            <a href=\"#\" data-toggle=\"dropdown\" data-target=\"#menu-messages\" class=\"dropdown-toggle\"><i class=\"fa fa-envelope\"></i> <span class=\"text\">Messages</span> <span class=\"label label-danger\">5</span> <b class=\"caret\"></b></a>\r\n        </li>\r\n        <li class=\"btn\"><a title=\"\" href=\"#\"><i class=\"fa fa-cog\"></i> <span class=\"text\">Settings</span></a></li>\r\n        <li class=\"btn\"><a title=\"\" href=\"/Home/Logout\"><i class=\"fa fa-share\"></i> <span class=\"text\">Logout</span></a></li>\r\n    </ul>\r\n</div>\r\n<div id=\"sidebar\">\r\n    <div id=\"search\">\r\n        <input type=\"text\" placeholder=\"Search here...\" /><button type=\"submit\" class=\"tip-right\" title=\"Search\"><i class=\"fa fa-search\"></i></button>\r\n    </div>\r\n    <ul>\r\n        <li [ngClass]=\"{'active':linkDashboard}\"><a [routerLink]=\"['/dashboard']\" ><i class=\"fa fa-home\"></i> <span>Dashboard</span></a></li>\r\n        <li [ngClass]=\"{'active':linkMoney}\"><a [routerLink]=\"['/moneys']\" ><i class=\"fa fa-th\"></i> <span>Money</span></a></li>\r\n        <li [ngClass]=\"{'active':linkPerson}\"><a [routerLink]=\"['/persons']\"><i class=\"fa fa-group\"></i> <span>Persons</span></a></li>\r\n\r\n        <li class=\"submenu\" [ngClass]=\"{'open':linksFirst.openClass}\">\r\n            <a href=\"#\" (click)=\"menuOpen(linksFirst,$event);$event.preventDefault();\"><i class=\"fa fa-flask\"></i> <span>UI Lab</span> <i class=\"arrow fa fa-chevron-right\"></i></a>\r\n            <ul >\r\n                <li><a href=\"#\">Interface Elements</a></li>\r\n                <li><a href=\"#\">jQuery UI</a></li>\r\n                <li><a href=\"#\">Buttons &amp; icons</a></li>\r\n            </ul>\r\n        </li>\r\n        <li class=\"submenu\" [ngClass]=\"{'open':linksSecond.openClass}\">\r\n            <a href=\"#\" (click)=\"menuOpen(linksSecond,$event);$event.preventDefault();\"><i class=\"fa fa-th-list\"></i> <span>Form elements</span> <i class=\"arrow fa fa-chevron-right\"></i></a>\r\n            <ul>\r\n                <li><a href=\"#\">Common elements</a></li>\r\n                <li><a href=\"#\">Validation</a></li>\r\n                <li><a href=\"#\">Wizard</a></li>\r\n            </ul>\r\n        </li>\r\n        \r\n        <li><a href=\"#\"><i class=\"fa fa-th-list\"></i> <span>Grid Layout</span></a></li>\r\n    </ul>\r\n</div>\r\n<div id=\"content\">\r\n    <router-outlet></router-outlet>\r\n</div>";
 
 /***/ }),
 

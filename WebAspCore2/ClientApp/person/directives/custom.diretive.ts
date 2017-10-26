@@ -1,11 +1,14 @@
 ﻿import { Directive, ElementRef, HostListener, HostBinding, OnChanges, Input  } from '@angular/core';
 
 //var jQurr = $;
-
+//declare var $: any;
 @Directive({
     selector: '[appCustomerInput]'
 })
 export class CustomerDirective implements OnChanges {
+
+    
+
     ngOnChanges(): void {//changes: SimpleChanges
         this.borderColor = this.appCustomerInput;
         //alert(jQurr)
@@ -14,7 +17,7 @@ export class CustomerDirective implements OnChanges {
     borderColor = 'black';
     opacity = 1;
     constructor(el: ElementRef) {
-        //$(el)
+        //alert($(el).length);
         //el.nativeElement.style.backgroundColor = 'yellow';
     }
 

@@ -22,16 +22,16 @@
         <li [ngClass]="{'active':linkPerson}"><a [routerLink]="['/persons']"><i class="fa fa-group"></i> <span>Persons</span></a></li>
 
         <li class="submenu" [ngClass]="{'open':linksFirst.openClass}">
-            <a href="#" (click)="menuOpen(linksFirst);$event.preventDefault();"><i class="fa fa-flask"></i> <span>UI Lab</span> <i class="arrow fa fa-chevron-right"></i></a>
-            <ul [hidden]="!linksFirst.openClass">
+            <a href="#" (click)="menuOpen(linksFirst,$event);$event.preventDefault();"><i class="fa fa-flask"></i> <span>UI Lab</span> <i class="arrow fa fa-chevron-right"></i></a>
+            <ul >
                 <li><a href="#">Interface Elements</a></li>
                 <li><a href="#">jQuery UI</a></li>
                 <li><a href="#">Buttons &amp; icons</a></li>
             </ul>
         </li>
         <li class="submenu" [ngClass]="{'open':linksSecond.openClass}">
-            <a href="#" (click)="menuOpen(linksSecond);$event.preventDefault();"><i class="fa fa-th-list"></i> <span>Form elements</span> <i class="arrow fa fa-chevron-right"></i></a>
-            <ul [hidden]="!linksSecond.openClass">
+            <a href="#" (click)="menuOpen(linksSecond,$event);$event.preventDefault();"><i class="fa fa-th-list"></i> <span>Form elements</span> <i class="arrow fa fa-chevron-right"></i></a>
+            <ul>
                 <li><a href="#">Common elements</a></li>
                 <li><a href="#">Validation</a></li>
                 <li><a href="#">Wizard</a></li>
