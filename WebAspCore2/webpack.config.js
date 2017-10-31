@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const { AotPlugin } = require('@ngtools/webpack');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = (env) => {
     const isDevBuild = !(env && env.prod);
@@ -45,6 +46,9 @@ module.exports = (env) => {
         },
         plugins: [
             new CheckerPlugin(),
+            new UglifyJSPlugin({
+                sourceMap: isDevBuild
+            }),
             new AotPlugin({
                 //entryModule: "./ClientApp/ng-main.ts",
                 "mainPath": "./ClientApp/ng-main.ts",

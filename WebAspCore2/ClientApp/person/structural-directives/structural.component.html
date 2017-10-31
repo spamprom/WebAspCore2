@@ -5,3 +5,33 @@
 <ng-template #myLinkName>
     AAAAAAAAAA
 </ng-template>
+
+<hr />
+<h5>ngFor</h5>
+<div *ngFor="let stu of studentsList">
+    <p style="margin-left:10px;">
+        {{stu.name}}<br />
+        {{stu.surname}}<br />
+        {{stu.age}}<br />
+    </p>
+</div>
+
+
+<hr />
+<h5>Switch</h5>
+<input type="radio" [value]="1" name="switch" [(ngModel)]="switchValue" /> First
+<input type="radio" [value]="2" name="switch" [(ngModel)]="switchValue" /> Second
+<input type="radio" [value]="3" name="switch" [(ngModel)]="switchValue" /> Third
+<br />
+<div [ngSwitch]="switchValue">
+    <div *ngSwitchCase="1">11111</div>
+    <div *ngSwitchCase="2">22222</div>
+    <div *ngSwitchCase="3">3333</div>
+</div>
+
+
+
+
+<hr />
+<h5>CustomerStrucure</h5>
+<div *appCustomerStrucure="checkBoxValue">AAAAAA CustomerStrucure AAA</div>

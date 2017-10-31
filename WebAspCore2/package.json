@@ -63,6 +63,7 @@
     "karma-cli": "1.0.1",
     "karma-jasmine": "1.1.0",
     "karma-webpack": "2.0.3",
-    "node-sass": "~4.5.3"
+    "node-sass": "~4.5.3",
+    "uglifyjs-webpack-plugin": "^1.0.0-rc.0"
   }
 }
