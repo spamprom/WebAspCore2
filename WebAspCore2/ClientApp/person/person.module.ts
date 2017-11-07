@@ -12,11 +12,12 @@ import { PersonService } from "./service/person.service";
 import { CustomerDirective } from "./directives/custom.diretive";
 import { StructuralComponent } from "./structural-directives/structural.component";
 import { CustomerStrucureDirective } from "./directives/customStrucure.diretive";
+import { PersonOneComponent } from "./components/one/personOne.component";
 
 
 @NgModule({
     declarations: [
-        AppComponent, PersonListComponent, PersonItemComponent, CustomerDirective, StructuralComponent, CustomerStrucureDirective
+        AppComponent, PersonListComponent, PersonItemComponent, CustomerDirective, StructuralComponent, CustomerStrucureDirective, PersonOneComponent
     ],
     imports: [
         CommonModule,

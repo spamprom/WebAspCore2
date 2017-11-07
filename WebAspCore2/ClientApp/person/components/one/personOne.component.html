@@ -1,0 +1,25 @@
+﻿<div id="content-header">
+    <h1>Persons One</h1>
+</div>
+<div id="breadcrumb">
+    <a [routerLink]="['/persons']" class="current"><i class="fa fa-group"></i> Persons</a>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        Persons One
+        <form (ngSubmit)="onSubmit(fData)" #fData="ngForm">
+            <label>User Name  <input type="text" ngModel name="username" /></label>
+            <label>Email  <input type="email" ngMode name="email" /></label>
+            <label>Pass  <input type="password" ngMode name="Password" /></label>
+            <label>Conf Pass  <input type="password" ngMode name="ConfPassword" /></label>
+            <label>User Name  
+                <select ngMode name="city" >
+                   <option>Kiev</option>
+                                  <option>Fastov</option>
+                                  <option>Berlin</option>
+                   </select></label>
+
+            <button id="submit" type="submit" >Save</button>
+        </form>
+    </div>
+</div>
