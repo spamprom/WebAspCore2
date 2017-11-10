@@ -36,10 +36,17 @@
     <None Remove="ClientApp\ng-polyfills.ts" />
     <None Remove="ClientApp\person\directives\custom.diretive.ts" />
     <None Remove="ClientApp\person\directives\customStrucure.diretive.ts" />
+    <None Remove="ClientApp\person\guards\admin.guard.ts" />
+    <None Remove="ClientApp\person\guards\auth.guard.ts" />
+    <None Remove="ClientApp\person\guards\away.guard.ts" />
+    <None Remove="ClientApp\person\guards\test.guard.ts" />
     <None Remove="ClientApp\person\model\StudentModel.ts" />
+    <None Remove="ClientApp\person\model\user.model.ts" />
     <None Remove="ClientApp\person\person.module.ts" />
     <None Remove="ClientApp\person\person.routing.ts" />
+    <None Remove="ClientApp\person\service\auth.service.ts" />
     <None Remove="ClientApp\person\service\person.service.ts" />
+    <None Remove="ClientApp\person\service\user.service.ts" />
     <None Remove="ClientApp\shared\model\navigatMenu.ts" />
   </ItemGroup>
 
@@ -73,10 +80,17 @@
     <TypeScriptCompile Include="ClientApp\ng-polyfills.ts" />
     <TypeScriptCompile Include="ClientApp\person\directives\custom.diretive.ts" />
     <TypeScriptCompile Include="ClientApp\person\directives\customStrucure.diretive.ts" />
+    <TypeScriptCompile Include="ClientApp\person\guards\admin.guard.ts" />
+    <TypeScriptCompile Include="ClientApp\person\guards\auth.guard.ts" />
+    <TypeScriptCompile Include="ClientApp\person\guards\away.guard.ts" />
+    <TypeScriptCompile Include="ClientApp\person\guards\test.guard.ts" />
     <TypeScriptCompile Include="ClientApp\person\model\StudentModel.ts" />
+    <TypeScriptCompile Include="ClientApp\person\model\user.model.ts" />
     <TypeScriptCompile Include="ClientApp\person\person.module.ts" />
     <TypeScriptCompile Include="ClientApp\person\person.routing.ts" />
+    <TypeScriptCompile Include="ClientApp\person\service\auth.service.ts" />
     <TypeScriptCompile Include="ClientApp\person\service\person.service.ts" />
+    <TypeScriptCompile Include="ClientApp\person\service\user.service.ts" />
     <TypeScriptCompile Include="ClientApp\shared\model\navigatMenu.ts" />
   </ItemGroup>
 

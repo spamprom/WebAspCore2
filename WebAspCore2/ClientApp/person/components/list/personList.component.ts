@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AuthService } from "../../service/auth.service";
+import { UserService } from "../../service/user.service";
+import { UserRole } from "../../model/UserRole";
 
 @Component({
     selector: 'personList',
@@ -7,7 +10,10 @@ import { Component } from '@angular/core';
 })
 export class PersonListComponent {
 
-    constructor() { }
+    activeRole: UserRole;
+    constructor(private authService: AuthService, private userService: UserService) {
+        this.activeRole = userService.getUserRoles();
+    }
 
     inputColorPicker = 'white';
 
@@ -31,4 +37,18 @@ export class PersonListComponent {
     onAttrStyleChange() {
         this.setStyle();
     }
+
+    onLoginAdmin() {
+        this.authService.login('admin', '123');
+        this.activeRole = this.userService.getUserRoles();
+    }
+    onLogin() {
+        this.authService.login('client', '123');
+        this.activeRole = this.userService.getUserRoles();
+    }
+    onLogout() {
+        this.authService.logout();
+        this.activeRole = this.userService.getUserRoles();
+    }
+
 }

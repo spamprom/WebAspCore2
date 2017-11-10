@@ -1,0 +1,61 @@
+﻿<div id="content-header">
+    <h1>Persons dda</h1>
+</div>
+<div id="breadcrumb">
+    <a [routerLink]="['/persons']" class="current"><i class="fa fa-group"></i> Persons</a>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        Persons dda
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+            <label>User Name  <input type="text"  formControlName="username" /></label>
+            <label>Email  <input type="email"  formControlName="email" /></label>
+            <label>Pass  <input type="password"  formControlName="password" /></label>
+            <label>Conf Pass  <input type="password"  formControlName="confPassword" /></label>
+            <label>
+                User Name
+                <select formControlName="city">
+                    <option value="Kiev">Kiev</option>
+                    <option value="Fastov">Fastov</option>
+                    <option value="Berlin">Berlin</option>
+                </select>
+            </label>
+
+            <label *ngFor="let gd of genders">
+                <input
+                       id="{{gd}}"
+                       type="radio"
+                       formControlName="gender"
+                       [value]="gd" /> {{gd}}
+            </label>
+            <br /><br /><br />
+            <label *ngFor="let gd of penders">
+                <input id="{{gd}}"
+                       type="radio"
+                       formControlName="pender"
+                       [value]="gd" /> {{gd}}
+            </label>
+
+
+            <div formArrayName="phones">
+                <div *ngFor="let phone of loginForm.controls.phones.controls; let i =index">
+                    <label>Phone</label>
+                    <input type="text" formControlName="{{i}}" />
+                </div>
+            </div>
+            <input type="button" (click)="addPhone()"  value="add"/>
+
+
+            <button id="submit" [disabled]="!loginForm.valid" type="submit">Save</button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12" *ngIf="!loginForm.controls.username.valid">
+        wwwwwww
+    </div>
+    <div class="col-xs-12" *ngIf="loginForm.controls['username'].errors!=null && loginForm.controls['username'].errors.onlyTextRequiredError">
+        onlyTextRequiredError
+    </div>
+</div>

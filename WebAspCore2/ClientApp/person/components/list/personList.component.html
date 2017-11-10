@@ -7,10 +7,21 @@
 <div class="row">
     <div class="col-xs-12">
         <br />
+        <button (click)="onLogin()">login client</button>
 
-        <a [routerLink]="['/persons/one']"><i class="fa fa-group"></i> GOGoGo</a>
+
+        <button (click)="onLoginAdmin()">login admin</button>
+
+        <button (click)="onLogout()">logot</button>
+
+        <br /><br /><br /><br />
+
+
+        <a  *ngIf="activeRole == 1 || activeRole == 2"  [routerLink]="['/persons/one']"><i class="fa fa-group"></i> GOGoGo client and admin</a>
         <br /><br />
-
+        
+        <a *ngIf="activeRole == 2" [routerLink]="['/persons/dda']"><i class="fa fa-group"></i>  gOgOgO only admin</a>
+        <br /><br />
 
         <h2>h2   sdfsdfdsf</h2>
         <h4 [ngClass]="isTextValid() ? 'green-text' : 'red-text'">h4</h4>
